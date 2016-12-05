@@ -2,8 +2,9 @@ RewriteEngine On
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !(/$|\.)
 
-#ErrorDocument 401
-#ErrorDocument 403
-#ErrorDocument 404
+RewriteRule ^page-introuvable/$ index.php?controller=content&method=erreurUrl [L]
+
+ErrorDocument 401 /romanczerkies/www/page-introuvable/
+ErrorDocument 403 /romanczerkies/www/page-introuvable/
+ErrorDocument 404 /romanczerkies/www/page-introuvable/
