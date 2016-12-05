@@ -5,9 +5,9 @@
  *
  * Rend et gère l'affichage de la page demandé via le routeur.
  *
- * @version v11.0.0
+ * @version v10.0.0
  * @link http://romanczerkies.fr/
- * @since v11.0.0-alpha.1
+ * @since v10.0.0-alpha
  */
 class superController {
 
@@ -30,8 +30,8 @@ class superController {
     if($metaDB) foreach($metaDB as $key => $value) if(!isset($meta[$key])) $meta[$key] = $metaDB[$key];
 
     // Vérification de la restriction
-    $userStatus = $_SESSION['membre']['status'] ?? 0;
-    if(isset($meta['restriction']) && $meta['restriction'] > $userStatus) $meta = $page->metaDatas('restriction');
+    //$userStatus = $_SESSION['membre']['status'] ?? 0;
+    //if(isset($meta['restriction']) && $meta['restriction'] > $userStatus) $meta = $page->metaDatas('restriction');
 
     // Controle de l'existance de la pager
     if(!file_exists('../views/' . $meta['folder'] . '/' . $meta['file_name'] . '.php')) $meta = $page->metaDatas('errorUrl');
@@ -46,7 +46,7 @@ class superController {
     ob_end_clean();
 
     // Chargement du template
-    include '../views/template.php';
+    include_once '../views/template.php';
 
   }
 

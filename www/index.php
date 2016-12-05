@@ -21,7 +21,7 @@ spl_autoload_register('autoloader');
 $controller = (isset($_GET['controller']) && !empty($_GET['controller'])) ? htmlentities($_GET['controller']) : 'content';
 $method = (isset($_GET['method']) && !empty($_GET['method'])) ? htmlentities($_GET['method']) : 'home';
 
-// Si fichier ou method non existante assignation erreur 400.
+// Si fichier ou method non existante assignation erreur 404.
 if(!file_exists('../controllers/'.$controller.'Controller.php')
 || !method_exists($controller . 'Controller', $method)) {
 

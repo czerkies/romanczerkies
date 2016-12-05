@@ -5,9 +5,9 @@
  *
  * Communique à toutes les autres class 'modele' la connexion à la base de données via PDO.
  *
- * @version v11.0.0
+ * @version v10.0.0
  * @link http://romanczerkies.fr/
- * @since v11.0.0-alpha.1
+ * @since v10.0.0-alpha.1
  */
 class superModel extends superController {
 
@@ -43,11 +43,18 @@ class superModel extends superController {
 
   }
 
+  /**
+  * Récupération des metaDatas de la DB
+  *
+  * @param string $file_name est le nom du fichier.
+  * @return Object $pdo Instance de la connexion via PDO
+  */
   public function metaDatas($file_name) {
 
     if(is_string($file_name) && !empty($file_name)) {
 
-      $sql = "SELECT file_name, folder, title, description, restriction FROM pages WHERE file_name = '$file_name'";
+      // file_name, folder, title, description, restriction
+      $sql = "SELECT folder, title, description FROM pages WHERE file_name = '$file_name'";
       $datas = $this->pdo()->query($sql);
 
       return $datasPage = $datas->fetch(PDO::FETCH_ASSOC);
