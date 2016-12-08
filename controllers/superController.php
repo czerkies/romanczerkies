@@ -41,10 +41,9 @@ class superController {
 
     // Affichage content
     ob_start();
-    include '../views/' . $meta['folder'] . '/' . $meta['file_name'] . '.php';
+    include_once '../views/' . $meta['folder'] . '/' . $meta['file_name'] . '.php';
     $buffer = ob_get_contents();
     ob_end_clean();
-
     // Chargement du template
     include_once '../views/template.php';
 

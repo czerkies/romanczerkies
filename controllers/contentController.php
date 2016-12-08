@@ -7,19 +7,23 @@ class contentController extends superController {
     $meta['file_name'] = 'home';
 
     $hub = [
-      'Twitter' => [
+      0 => [
+        'value' => 'Twitter',
         'href' => 'https://twitter.com/roman_czerkies',
         'title' => '@roman_czerkies',
       ],
-      'LinkedIn' => [
+      1 => [
+        'value' => 'LinkedIn',
         'href' => 'linkedin',
         'title' => 'Voir le profil professionnel de Roman Czerkies sur LinkedIn',
       ],
-      'GitHub' => [
+      2 => [
+        'value' => 'GitHub',
         'href' => 'github',
         'title' => 'Follow their code on GitHub',
       ],
-      'Strava' => [
+      3 => [
+        'value' => 'Strava',
         'href' => 'strava',
         'title' => 'Cyclist on Strava',
       ]
