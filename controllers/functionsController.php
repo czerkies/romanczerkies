@@ -25,13 +25,13 @@ class functionsController extends superController {
     if (in_array($type, $listType)) {
 
       $field .= '<input type="' . $type . '"';
-      if ($name) $field .= 'name="' . $name . '"';
+      if ($name) $field .= ' name="' . $name . '"';
       if ($id) $field .= ' id="' . $name . '"';
       if ($attr) foreach ($attr as $key => $value) $field .= ' ' . $key . '="' . $value . '"';
       if ($_POST && isset($_POST[$name])) $field .= ' value="' . $_POST[$name] . '"';
-      elseif ($value) $field .=  'value="' . $value . '"';
+      elseif ($value) $field .=  ' value="' . $value . '"';
       if ($required) $field .= ' required';
-      $field .= '>';
+      $field .= ">\n";
 
     } else {
 
@@ -67,7 +67,7 @@ class functionsController extends superController {
     if ($required) $field .= ' required';
     $field .= '>';
     if ($_POST && $_POST[$name]) $field .= $_POST[$name];
-    $field .= '</textarea>';
+    $field .= "</textarea>\n";
 
     echo $field;
 
@@ -83,12 +83,12 @@ class functionsController extends superController {
   * @param (string) $from (option)
   *
   */
-  public function sendMail($to, $subject, $content, $from = 'contact@lepetitstbernard.fr'){
+  public function sendMail($to, $subject, $content, $from = EMAIL){
 
     $headers = 'Content-Type: text/html; charset=\"UTF-8\";' . "\r\n";
-    $headers .= 'FROM: Le petit St Bernard <'.$from.'>' . "\r\n";
+    $headers .= 'FROM: Le petit St Bernard <' . $from . '>' . "\r\n";
 
-    $subjectFormat = "Le petit St bernard - ".$subject;
+    $subjectFormat = "Le petit St bernard - " . $subject;
 
     mail($to, $subjectFormat, $content, $headers);
 
