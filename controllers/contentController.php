@@ -6,34 +6,18 @@ class contentController extends superController {
 
     $meta['file_name'] = 'home';
 
-    $hub = [
-      0 => [
-        'value' => 'Twitter',
-        'href' => 'https://twitter.com/roman_czerkies',
-        'title' => '@roman_czerkies',
-      ],
-      1 => [
-        'value' => 'LinkedIn',
-        'href' => 'linkedin',
-        'title' => 'Voir le profil professionnel de Roman Czerkies sur LinkedIn',
-      ],
-      2 => [
-        'value' => 'GitHub',
-        'href' => 'github',
-        'title' => 'Follow their code on GitHub',
-      ],
-      3 => [
-        'value' => 'Strava',
-        'href' => 'strava',
-        'title' => 'Cyclist on Strava',
-      ]
-    ];
+    $db = new publicModel();
+
+    $hub = $db->hubDatas();
 
     $functions = new functionsController();
 
+    if ($_POST) $post = $functions->contactPost();
+    else $post = NULL;
+
     $this->render(
       $meta,
-      ['hub' => $hub, 'functions' => $functions]
+      ['hub' => $hub, 'functions' => $functions, 'post' => $post]
     );
 
   }
