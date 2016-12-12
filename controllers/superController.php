@@ -27,17 +27,17 @@ class superController {
     $metaDB = $page->metaDatas($meta['file_name']);
 
     // Assignation des données si existante à la variable 'meta'
-    if($metaDB) foreach($metaDB as $key => $value) if(!isset($meta[$key])) $meta[$key] = $metaDB[$key];
+    if ($metaDB) foreach ($metaDB as $key => $value) if (!isset($meta[$key])) $meta[$key] = $metaDB[$key];
 
     // Vérification de la restriction
     //$userStatus = $_SESSION['membre']['status'] ?? 0;
     //if(isset($meta['restriction']) && $meta['restriction'] > $userStatus) $meta = $page->metaDatas('restriction');
 
     // Controle de l'existance de la pager
-    if(!file_exists('../views/' . $meta['folder'] . '/' . $meta['file_name'] . '.php')) $meta = $page->metaDatas('errorUrl');
+    if (!file_exists('../views/' . $meta['folder'] . '/' . $meta['file_name'] . '.php')) $meta = $page->metaDatas('errorUrl');
 
     // Si des données sont envoyées alors extraction
-    if(isset($datas)) extract($datas);
+    if (isset($datas)) extract($datas);
 
     // Affichage content
     ob_start();
@@ -79,8 +79,8 @@ class superController {
 
     $error = '';
 
-    if($class !== NULL || $function !== NULL) $error .= 'Erreur dans la method <b>' . $function . '</b> de la class <b>' . $class . '</b>.<br>';
-    if($explain) $error .= 'Informations : ' . $explain;
+    if ($class !== NULL || $function !== NULL) $error .= 'Erreur dans la method <b>' . $function . '</b> de la class <b>' . $class . '</b>.<br>';
+    if ($explain) $error .= 'Informations : ' . $explain;
 
     $error .= '<hr>';
 
