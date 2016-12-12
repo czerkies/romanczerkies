@@ -10,6 +10,14 @@
  */
 class publicModel extends superModel {
 
+  public function hubDatas() {
 
+    $sql = "SELECT value, href, title FROM hub ORDER BY classement";
+
+    $datas = $this->pdo()->query($sql);
+
+    return $datas->fetchAll();
+
+  }
 
 }
