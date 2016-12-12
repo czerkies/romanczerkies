@@ -11,7 +11,7 @@
     <form method="post">
       <?php $functions->fieldsFormInput(2); ?>
       <div>
-        <?php $functions->fieldsFormTextarea(1, TRUE, TRUE); ?>
+        <?php $functions->fieldsFormTextarea(1, TRUE, TRUE, FALSE, array('placeholder' => $post)); ?>
       </div>
       <div>
         <?php $functions->fieldsFormInput('', 'submit', FALSE, FALSE, 'Envoyer'); ?>
