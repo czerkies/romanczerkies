@@ -1,8 +1,14 @@
+/* Variables */
+
 $color1: #444;
 $color2: #ededed;
 $color3: #fafafa;
 $marg: 10vw;
 $gout: 2.5vw;
+$border:  1px solid;
+$ft: 1.25em;
+
+/* Générique */
 
 * {
   box-sizing: border-box;
@@ -27,9 +33,16 @@ a {
   transition: color 250ms ease;
 }
 
+span {
+  font-size: 1em;
+  color: $color2;
+}
+
+/* Header */
+
 header {
   padding: 0 0 0 $marg;
-  border-bottom: 1px solid $color2;
+  border-bottom: $border $color2;
   display: flex;
   overflow: hidden;
   a {
@@ -48,8 +61,106 @@ header {
     }
   }
   > * {
-    border-left: 1px solid $color2;
+    border-left: $border $color2;
   }
+}
+
+/* Nav */
+
+nav {
+  padding: 0 0 0 $marg;
+  border-bottom: $border $color2;
+  > * {
+    border-left: $border $color2;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 1.25vw 0;
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
+    li {
+      align-self: flex-start;
+      a,
+      label {
+        display: block;
+        padding: 1.25vw $gout;
+        font-size: $ft;
+        cursor: pointer;
+      }
+    }
+    li:nth-child(1) {
+      animation: li_event 1s cubic-bezier(.25, .1, .25, 1.1) 0s backwards;
+    }
+    li:nth-child(2) {
+      animation: li_event 1s cubic-bezier(.25, .1, .25, 1.1) 100ms backwards;
+    }
+    li:nth-child(3) {
+      animation: li_event 1s cubic-bezier(.25, .1, .25, 1.1) 200ms backwards;
+    }
+    li:nth-child(4) {
+      animation: li_event 1s cubic-bezier(.25, .1, .25, 1.1) 300ms backwards;
+    }
+    li:nth-child(5) {
+      animation: li_event 1s cubic-bezier(.25, .1, .25, 1.1) 400ms backwards;
+    }
+  }
+}
+
+form {
+  margin: 0;
+  input[type=text] {
+    display: none;
+  }
+  > div {
+    padding: 0 0 0 10vw;
+    border-bottom: 1px solid #ededed;
+    display: flex;
+    overflow: hidden;
+  }
+  ,
+  > div:last-child {
+    border-bottom: none;
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+  }
+  > div:last-child {
+    margin: 0 0 0 $marg;
+    padding: 0;
+    border-left: $border $color2;
+  }
+  textarea {
+    width: 100%;
+    height: calc((1.5em * 4) + (2.5vw * 2));
+    margin: 0;
+    padding: $gout;
+    border-width: 0 0 0 1px;
+    border-style: solid;
+    border-color: $color2;
+    outline: none;
+    background: transparent;
+    font-size: $ft;
+    resize: none;
+    transition: background 250ms ease;
+    &:focus {
+      background: $color2;
+    }
+  }
+  input[type=submit] {
+    margin: 0;
+    padding: $gout;
+    background: transparent;
+    border: none;
+    align-self: flex-start;
+    font-size: $ft;
+    color: $color1;
+    cursor: pointer;
+    transition: color 250ms ease;
+    animation: li_event 1s cubic-bezier(.25, .1, .25, 1.1) 500ms backwards;
+  }
+
 }
 
 /* Animation */
@@ -62,5 +173,16 @@ header {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes li_event {
+  0% {
+    transform: translateX(-10vw);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
