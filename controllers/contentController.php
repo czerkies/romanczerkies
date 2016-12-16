@@ -7,7 +7,6 @@ class contentController extends superController {
     $meta['file_name'] = 'home';
 
     $db = new publicModel();
-
     $hub = $db->hubDatas();
 
     $functions = new functionsController();
