@@ -1,0 +1,66 @@
+$color1: #444;
+$color2: #ededed;
+$color3: #fafafa;
+$marg: 10vw;
+$gout: 2.5vw;
+
+* {
+  box-sizing: border-box;
+  font: 16px helvetica;
+  letter-spacing: .1em;
+  color: $color1;
+  font-weight: 100;
+  line-height: 1.5em;
+}
+
+body {
+  background: $color3;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $color1;
+  transition: color 250ms ease;
+}
+
+header {
+  padding: 0 0 0 $marg;
+  border-bottom: 1px solid $color2;
+  display: flex;
+  overflow: hidden;
+  a {
+    padding: $gout;
+    h1,
+    h2 {
+      margin: 0;
+      padding: 0;
+      font-size: 2em;
+    }
+    h1 {
+      animation: header1 1s cubic-bezier(.25, .1, .25, 1.15) 0 backwards;
+    }
+    h2 {
+      animation: header1 1s cubic-bezier(.25, .1, .25, 1.15) 100ms backwards;
+    }
+  }
+  > * {
+    border-left: 1px solid $color2;
+  }
+}
+
+/* Animation */
+
+@keyframes header1 {
+  0% {
+    opacity: 0;
+    transform: translateY($marg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
