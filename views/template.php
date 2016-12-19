@@ -9,8 +9,8 @@
   <body>
     <header>
       <a href="<?= RACINE; ?>" title="Accueil">
-        <h1><?= FIRST_TITLE; ?></h1>
-        <h2><?= SECOND_TITLE; ?></h2>
+        <h1>Roman Czerkies</h1>
+        <h2>Développeur Web Full-Stack</h2>
       </a>
     </header>
 <?= $buffer; ?>
