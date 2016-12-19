@@ -1,12 +1,14 @@
 /* Variables */
 
 $color1: #444;
+$color4: #888;
 $color2: #ededed;
 $color3: #fafafa;
 $marg: 10vw;
 $gout: 2.5vw;
 $border:  1px solid;
 $ft: 1.25em;
+$transitionColor: color 250ms ease;
 
 /* Générique */
 
@@ -30,12 +32,7 @@ body {
 a {
   text-decoration: none;
   color: $color1;
-  transition: color 250ms ease;
-}
-
-span {
-  font-size: 1em;
-  color: $color2;
+  transition: $transitionColor;
 }
 
 /* Header */
@@ -87,7 +84,32 @@ nav {
         display: block;
         padding: 1.25vw $gout;
         font-size: $ft;
+        transition: $transitionColor;
+      }
+      a {
+        &[href*='twitter']:hover,
+        &[href*='twitter']:focus {
+          color: rgba(29, 142, 238, 1);
+        }
+        &[href*='twitter']:active {
+          color: rgba(29, 142, 238, .5);
+        }
+        &[href*='strava']:hover,
+        &[href*='strava']:focus {
+          color: rgba(251, 57, 8, 1);
+        }
+        &[href*='strava']:active {
+          color: rgba(251, 57, 8, .5);
+        }
+      }
+      label {
         cursor: pointer;
+        &:hover {
+          color: $color4;
+        }
+        &:active {
+          color: $color2;
+        }
       }
     }
     li:nth-child(1) {
@@ -157,8 +179,14 @@ form {
     font-size: $ft;
     color: $color1;
     cursor: pointer;
-    transition: color 250ms ease;
+    transition: $transitionColor;
     animation: li_event 1s cubic-bezier(.25, .1, .25, 1.1) 500ms backwards;
+    &:hover {
+      color: $color4;
+    }
+    &:active {
+      color: $color2;
+    }
   }
 
 }
@@ -184,5 +212,11 @@ form {
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@media (max-device-width: 980px) {
+  * {
+    font-size: 34px;
   }
 }
