@@ -22,6 +22,4 @@ define('RACINE_SERVER', $_SERVER['DOCUMENT_ROOT']);
 define('LOG', TRUE);
 
 // Constantes
-define('FIRST_TITLE', 'Name LastName');
-define('SECOND_TITLE', 'Dev ft web');
 define('EMAIL', 'roman.czerkies@gmail.com');
