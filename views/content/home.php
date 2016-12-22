@@ -1,7 +1,7 @@
     <nav>
       <ul>
         <?php foreach ($hub as $val): ?><li>
-          <a href="<?= $val['href']; ?>" title="<?= $val['title']; ?>"><?= $val['value']; ?></a>
+          <a href="//<?= $val['href']; ?>" title="<?= $val['title']; ?>"><?= $val['value']; ?></a>
         </li>
         <?php endforeach; ?><li>
           <label for="1">Contact</label>
