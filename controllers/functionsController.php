@@ -88,11 +88,52 @@ class functionsController extends superController {
   public function sendMail($to, $subject, $content, $from = EMAIL) {
 
     $headers = 'Content-Type: text/html; charset=\"UTF-8\";' . "\r\n";
-    $headers .= 'FROM: Roman Czerkies <' . $from . '>' . "\r\n";
+    $headers .= 'FROM: ' . H1 . ' <' . $from . '>' . "\r\n";
 
-    $subjectFormat = "Roman Czerkies - " . $subject;
+    $subjectFormat = H1 . ' | ' . $subject;
 
-    mail($to, $subjectFormat, $content, $headers);
+    $template = '
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8">
+          <title>' . H1 . ' | Contact</title>
+          <style>
+            body {
+              width:100%;
+              padding:25px;
+              background:#fafafa;
+              color:#444;
+              font-family:arial;
+            }
+            h1,
+            H2 {
+              margin: 0;
+              font-size: 24px;
+            }
+            div {
+              margin: 25px 0;
+            }
+            p {
+              margin: 0;
+              font-size: 16px;
+            }
+          </style>
+        </head>
+        <body>
+          <h1>' . H1 . '</h1>
+          <h2>' . H2 . '</h2>
+          <div>
+            <p>Message :</p>
+            <p>' . $content . '</p>
+          </div>
+        </body>
+      </html>
+    ';
+
+    echo $template;
+
+    //mail($to, $subjectFormat, $template, $headers);
 
   }
 
@@ -111,17 +152,22 @@ class functionsController extends superController {
       /*echo "<pre>";
       var_dump($words);*/
 
-      $emails = [];
-      $urls = [];
+      $emails = '';
+      $urls = '';
 
       foreach ($words as $value) {
 
-        if(filter_var($value, FILTER_VALIDATE_EMAIL)) $emails[] = $value;
-        if(filter_var($value, FILTER_VALIDATE_URL)) $urls[] = $value;
+        if(filter_var($value, FILTER_VALIDATE_EMAIL)) $emails .= $value . ', ';
+        if(filter_var($value, FILTER_VALIDATE_URL)) $urls .= $value;
 
       }
 
+      // mail avec formatage
+
       //$return = array_key_exists($message, $datas) ? $datas[$message] : "Votre message a bien été envoyé."; // @TODO uppercase
+
+      self::sendMail($emails, 'Contact', $message);
+
       $return = "Votre message a bien été envoyé.";
 
     } else {
