@@ -84,7 +84,7 @@ class superController {
 
     $error .= '<hr>';
 
-    if(LOG) echo $error;
+    if (LOG) echo $error;
 
   }
 
