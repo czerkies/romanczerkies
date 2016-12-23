@@ -14,5 +14,6 @@
       </a>
     </header>
 <?= $buffer; ?>
+  <!-- romanczerkies.fr Version 10.0 -->
   </body>
 </html>
