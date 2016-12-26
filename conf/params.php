@@ -23,6 +23,6 @@ define('LOG', TRUE);
 
 // Constantes
 define('EMAIL', 'roman.czerkies@gmail.com');
-//define('H1', 'Roman Czerkies');
-define('H1', 'Firstname Lastname');
+define('H1', 'Roman Czerkies');
+//define('H1', 'Firstname Lastname');
 define('H2', 'Développeur Web Full-Stack');
