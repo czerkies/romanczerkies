@@ -86,6 +86,8 @@ class superController {
 
     if (LOG) echo $error;
 
+    return FALSE;
+
   }
 
 }
