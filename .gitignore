@@ -1,2 +1,5 @@
+#params
+conf/params.php
+
 #npm
 node_modules/
