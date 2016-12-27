@@ -57,17 +57,16 @@ header {
     padding: $gout;
     h1,
     h2 {
-      text-transform: full-width;
       margin: 0;
       padding: 0;
       font-size: 2em;
       transition: $transitionColor;
     }
     h1 {
-      animation: header $animationTime cubic-bezier(.25, .1, .25, 1.05) 0 backwards;
+      animation: header_event $animationTime cubic-bezier(.25, .1, .25, 1.05) 0ms backwards;
     }
     h2 {
-      animation: header $animationTime cubic-bezier(.25, .1, .25, 1.05) 100ms backwards;
+      animation: header_event $animationTime cubic-bezier(.25, .1, .25, 1.1) 100ms backwards;
     }
     &:focus {
       h1,
@@ -108,7 +107,7 @@ nav {
             color: rgba($twitter, 1);
           }
           &:active {
-            color: rgba($twitter, .5);
+            color: rgba($twitter, .25);
           }
         }
         &[href*='linkedin'] {
@@ -117,7 +116,7 @@ nav {
             color: rgba($linkedin, 1);
           }
           &:active {
-            color: rgba($linkedin, .5);
+            color: rgba($linkedin, .25);
           }
         }
         &[href*='github'] {
@@ -126,7 +125,7 @@ nav {
             color: rgba($github, 1);
           }
           &:active {
-            color: rgba($github, .5);
+            color: rgba($github, .25);
           }
         }
         &[href*='strava'] {
@@ -135,7 +134,7 @@ nav {
             color: rgba($strava, 1);
           }
           &:active {
-            color: rgba($strava, .5);
+            color: rgba($strava, .25);
           }
         }
       }
@@ -157,6 +156,8 @@ nav {
     }
   }
 }
+
+/* Article */
 
 article {
   flex: 1;
@@ -182,6 +183,8 @@ article {
     }
   }
 }
+
+/* Formulaire */
 
 form {
   margin: 0;
@@ -246,15 +249,17 @@ form {
 
 }
 
-/* Animation */
+/* Animations */
 
-@keyframes header {
+@keyframes header_event {
   0% {
     opacity: 0;
+    filter: blur(4px);
     transform: translateY($marg);
   }
-  25% {
+  50% {
     opacity: 1;
+    filter: blur(0);
   }
   100% {
     opacity: 1;
@@ -264,11 +269,13 @@ form {
 
 @keyframes li_event {
   0% {
-    transform: translateX(-$marg);
     opacity: 0;
+    filter: blur(4px);
+    transform: translateX(-$marg);
   }
-  25% {
+  50% {
     opacity: 1;
+    filter: blur(0);
   }
   100% {
     opacity: 1;
