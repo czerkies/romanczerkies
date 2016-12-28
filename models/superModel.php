@@ -54,14 +54,19 @@ class superModel extends superController {
     if(is_string($file_name) && !empty($file_name)) {
 
       // file_name, folder, title, description, restriction
-      $sql = "SELECT folder, title, description FROM pages WHERE file_name = '$file_name'";
+      $sql = "SELECT folder, file_name, title, description";
+      if (RESTRICTION) $sql .= ", restriction";
+      $sql .= " FROM pages WHERE file_name = '$file_name'";
+
+      echo $sql;
+
       $datas = $this->pdo()->query($sql);
 
       return $datasPage = $datas->fetch(PDO::FETCH_ASSOC);
 
     } else {
 
-      $this->displayError(__CLASS__, __FUNCTION__, "'file_name' non valide.");
+      return self::displayError(__CLASS__, __FUNCTION__, "'file_name' non valide.");
 
     }
 
