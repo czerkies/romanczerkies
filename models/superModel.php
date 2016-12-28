@@ -58,8 +58,6 @@ class superModel extends superController {
       if (RESTRICTION) $sql .= ", restriction";
       $sql .= " FROM pages WHERE file_name = '$file_name'";
 
-      echo $sql;
-
       $datas = $this->pdo()->query($sql);
 
       return $datasPage = $datas->fetch(PDO::FETCH_ASSOC);
