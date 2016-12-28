@@ -66,7 +66,7 @@ header {
       animation: header_event $animationTime cubic-bezier(.25, .1, .25, 1.05) 0ms backwards;
     }
     h2 {
-      animation: header_event $animationTime cubic-bezier(.25, .1, .25, 1.1) 100ms backwards;
+      animation: header_event $animationTime cubic-bezier(.25, .1, .25, 1.075) 100ms backwards;
     }
     &:focus {
       h1,
@@ -254,12 +254,10 @@ form {
 @keyframes header_event {
   0% {
     opacity: 0;
-    filter: blur(4px);
     transform: translateY($marg);
   }
   50% {
     opacity: 1;
-    filter: blur(0);
   }
   100% {
     opacity: 1;
@@ -270,12 +268,10 @@ form {
 @keyframes li_event {
   0% {
     opacity: 0;
-    filter: blur(4px);
     transform: translateX(-$marg);
   }
   50% {
     opacity: 1;
-    filter: blur(0);
   }
   100% {
     opacity: 1;
