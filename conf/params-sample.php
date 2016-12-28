@@ -18,6 +18,9 @@ define('PARAM_DB',[
 define('RACINE', '/romanczerkies/www/');
 define('RACINE_SERVER', $_SERVER['DOCUMENT_ROOT']);
 
+// Gestion des restrictions
+define('RESTRICTION', FALSE);
+
 // Affichage des erreurs
 define('LOG', TRUE);
 
