@@ -79,61 +79,31 @@ class functionsController extends superController {
   /**
   * Fonction d'envoie de mail
   *
-  * @param (string) $to
-  * @param (string) $subject
-  * @param (string) $content
-  * @param (string) $from (option)
+  * @param (string) $to Mail à envoyer
+  * @param (string) $subject Sujet du mail
+  * @param (string) $content Content du mail
+  * @param (string) $templateName Nom du template ('contact')
+  * @param (string) $from (option) Mail de EMAIL
   *
   */
-  public function sendMail($to, $subject, $content, $from = EMAIL) {
+  public function sendMail($to, $subject, $content, $templateName = 'contact', $from = EMAIL) {
 
     $headers = 'Content-Type: text/html; charset=\"UTF-8\";' . "\r\n";
     $headers .= 'FROM: ' . H1 . ' <' . $from . '>' . "\r\n";
 
     $subjectFormat = H1 . ' | ' . $subject;
 
-    $template = '
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <meta charset="utf-8">
-          <title>' . H1 . ' | Contact</title>
-          <style>
-            body {
-              width:100%;
-              padding:25px;
-              background:#fafafa;
-              color:#444;
-              font-family:arial;
-            }
-            h1,
-            H2 {
-              margin: 0;
-              font-size: 24px;
-            }
-            div {
-              margin: 25px 0;
-            }
-            p {
-              margin: 0;
-              font-size: 16px;
-            }
-          </style>
-        </head>
-        <body>
-          <h1>' . H1 . '</h1>
-          <h2>' . H2 . '</h2>
-          <div>
-            <p>Message :</p>
-            <p>' . $content . '</p>
-          </div>
-        </body>
-      </html>
-    ';
+    if (file_exists('../views/mails/' . $templateName . '.php')) {
 
-    echo $template;
+      include_once '../views/mails/' . $templateName . '.php';
 
-    //mail($to, $subjectFormat, $template, $headers);
+      return mail($to, $subjectFormat, $template, $headers);
+
+    } else {
+
+      return self::displayError(__CLASS__, __FUNCTION__, 'Votre template mail n\'existe pas.');
+
+    }
 
   }
 
@@ -149,8 +119,6 @@ class functionsController extends superController {
       $message = htmlentities($_POST[1], ENT_QUOTES);
 
       $words = explode(' ', trim($message, "\t\n\r\0\x0B"));
-      /*echo "<pre>";
-      var_dump($words);*/
 
       $emails = '';
       $urls = '';
@@ -162,13 +130,8 @@ class functionsController extends superController {
 
       }
 
-      // mail avec formatage
-
-      //$return = array_key_exists($message, $datas) ? $datas[$message] : "Votre message a bien été envoyé."; // @TODO uppercase
-
-      self::sendMail($emails, 'Contact', $message);
-
-      $return = "Votre message a bien été envoyé.";
+      if (self::sendMail($emails, 'Contact', $message)) $return = "Votre message a bien été envoyé.";
+      else $return = "Votre message n'a pas été envoyé.";
 
     } else {
 
