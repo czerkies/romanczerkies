@@ -3,13 +3,13 @@
 $color1: #444;
 $color4: #aaa;
 $color2: #ededed;
-$color3: #fafafa;
+$color3: #fefefe;
 $marg: 10vw;
 $gout: 2.5vw;
 $border:  1px solid;
 $ft: 1.25em;
 $transitionColor: color 200ms cubic-bezier(.25, .1, .25, 1);
-$animationTime: 1000ms;
+$animationTime: 1250ms;
 
 $twitter: #1da1f2;
 $linkedin: #0077b5;
@@ -63,10 +63,10 @@ header {
       transition: $transitionColor;
     }
     h1 {
-      animation: header_event $animationTime cubic-bezier(.25, .1, .25, 1.05) 0ms backwards;
+      animation: header_event $animationTime cubic-bezier(.25, .1, .25, 1) 0ms backwards;
     }
     h2 {
-      animation: header_event $animationTime cubic-bezier(.25, .1, .25, 1.075) 100ms backwards;
+      animation: header_event $animationTime cubic-bezier(.25, .1, .25, 1) 100ms backwards;
     }
     &:focus {
       h1,
@@ -150,7 +150,7 @@ nav {
       }
       @for $i from 0 through 4 {
         &:nth-child(#{$i + 1}) {
-          animation: li_event $animationTime cubic-bezier(.25, .1, .25, 1.1) #{100 * $i}ms backwards;
+          animation: li_event $animationTime cubic-bezier(.25, .1, .25, 1) #{100 * $i}ms backwards;
         }
       }
     }
@@ -220,7 +220,6 @@ form {
     outline: none;
     background: transparent;
     font-size: $ft;
-    /*resize: none;*/
     transition: background 250ms ease;
     &:focus {
       background: $color2;
@@ -237,7 +236,7 @@ form {
     cursor: pointer;
     outline: none;
     transition: $transitionColor;
-    animation: li_event $animationTime cubic-bezier(.25, .1, .25, 1.1) 500ms backwards;
+    animation: li_event $animationTime cubic-bezier(.25, .1, .25, 1) 500ms backwards;
     &:hover,
     &:focus {
       color: $color4;
@@ -275,7 +274,7 @@ form {
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
@@ -283,6 +282,6 @@ form {
 
 @media (max-device-width: 980px) {
   * {
-    font-size: 34px;
+    font-size: 39px;
   }
 }
