@@ -15,7 +15,7 @@ class contentController extends superController {
   /**
   * Affichage de la page d'accueil
   *
-  * @param empty
+  * @param void
   *
   * @return function render()
   *
