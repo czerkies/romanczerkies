@@ -7,7 +7,8 @@
  *
  * @version v10.0.0
  * @link http://romanczerkies.fr/
- * @since v10.0.0-alpha
+ * @since v10.0.0
+ *
  */
 class superController {
 
@@ -20,7 +21,7 @@ class superController {
   public function render($meta = array(), $datas = array()) {
 
     // Démarage de la 'session'
-    //session_start();
+    if (SESSION) session_start();
 
     // Chargement des données depuis la DB.
     $page = new superModel();
