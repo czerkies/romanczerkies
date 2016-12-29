@@ -8,6 +8,7 @@
  * @version v10.0.0
  * @link http://romanczerkies.fr/
  * @since v10.0.0
+ *
  */
 class contentController extends superController {
 
@@ -17,6 +18,7 @@ class contentController extends superController {
   * @param empty
   *
   * @return function render()
+  *
   */
   public function home() {
 
