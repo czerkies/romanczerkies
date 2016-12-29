@@ -137,7 +137,9 @@ class functionsController extends superController {
     $returnKO = "Votre message n'a pas été envoyé.";
 
     // Vérification des champs
-    if(!empty($_POST[1]) && empty($_POST[2])) {
+    if (isset($_POST[1]) && isset($_POST[2])
+    && !empty($_POST[1]) && strlen($_POST[1]) >= 5
+    && empty($_POST[2])) {
 
       $message = htmlentities($_POST[1], ENT_QUOTES);
 
