@@ -8,6 +8,7 @@
  * @version v10.0.0
  * @link http://romanczerkies.fr/
  * @since v10.0.0
+ *
  */
 class functionsController extends superController {
 
@@ -125,6 +126,7 @@ class functionsController extends superController {
   * Fonction traitement post via la global $_POST
   *
   * @param void
+  *
   * @return $return string Message de confirmation
   *
   */
