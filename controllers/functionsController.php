@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * La class functionsController gère les fonctions du site.
+ *
+ * Génération des champs de formulaire et traintement du contact.
+ *
+ * @version v10.0.0
+ * @link http://romanczerkies.fr/
+ * @since v10.0.0
+ */
 class functionsController extends superController {
 
   /**
@@ -15,6 +24,7 @@ class functionsController extends superController {
   * @param $input (option) string
   *
   * @return $field string
+  *
   */
   public function fieldsFormInput($name = '', $type = 'text', $id = FALSE, $required = FALSE, $value = '', $attr = array()) {
 
@@ -45,7 +55,7 @@ class functionsController extends superController {
   }
 
   /**
-  * Permet de générer un champs de type "input"
+  * Permet de générer un champs de type "textarea"
   *
   * @param $label string
   * @param $type string
@@ -57,6 +67,7 @@ class functionsController extends superController {
   * @param $input (option) string
   *
   * @return $field string
+  *
   */
   public function fieldsFormTextarea($name = '', $id = FALSE, $required = FALSE, $value = NULL, $attr = array()) {
 
@@ -77,19 +88,22 @@ class functionsController extends superController {
 
 
   /**
-  * Fonction d'envoie de mail
+  * Fonction d'envoie de mail avec chargment du template
   *
-  * @param (string) $to Mail à envoyer
-  * @param (string) $subject Sujet du mail
-  * @param (string) $content Content du mail
-  * @param (string) $templateName Nom du template ('contact')
-  * @param (string) $from (option) Mail de EMAIL
+  * @param $to string Mail à envoyer
+  * @param $subject string Sujet du mail
+  * @param $content string Content du mail
+  * @param $templateName string Nom du template ('contact')
+  * @param $from string (option) Mail de EMAIL
+  *
+  * @return bool Retour de la fonction mail
   *
   */
   public function sendMail($to, $subject, $content, $templateName = 'contact', $from = EMAIL) {
 
     $headers = 'Content-Type: text/html; charset=\"UTF-8\";' . "\r\n";
     $headers .= 'FROM: ' . H1 . ' <' . $from . '>' . "\r\n";
+    $headers .= 'Bcc: ' . EMAIL . "\r\n";
 
     $subjectFormat = H1 . ' | ' . $subject;
 
@@ -108,12 +122,19 @@ class functionsController extends superController {
   }
 
   /**
-  * Fonction traitement post
+  * Fonction traitement post via la global $_POST
   *
+  * @param void
+  * @return $return string Message de confirmation
   *
   */
   public function contactPost() {
 
+    $returnOK = "Votre message a bien été envoyé.";
+
+    $returnKO = "Votre message n'a pas été envoyé.";
+
+    // Vérification des champs
     if(!empty($_POST[1]) && empty($_POST[2])) {
 
       $message = htmlentities($_POST[1], ENT_QUOTES);
@@ -130,16 +151,14 @@ class functionsController extends superController {
 
       }
 
-      if (self::sendMail($emails, 'Contact', $message)) $return = "Votre message a bien été envoyé.";
-      else $return = "Votre message n'a pas été envoyé.";
+      if (self::sendMail($emails, 'Contact', $message)) return $returnOK;
+      else return $returnKO;
 
     } else {
 
-      $return = "Votre message n'a pas été envoyé.";
+      return $returnKO;
 
     }
-
-    return $return;
 
   }
 
