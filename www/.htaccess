@@ -3,8 +3,12 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteRule ^page-introuvable/$ index.php?controller=content&method=erreurUrl [L]
+RewriteRule ^page-introuvable/$ index.php?controller=content&method=errorUrl [L]
 
 ErrorDocument 401 /romanczerkies/www/page-introuvable/
 ErrorDocument 403 /romanczerkies/www/page-introuvable/
 ErrorDocument 404 /romanczerkies/www/page-introuvable/
+
+#ErrorDocument 401 /page-introuvable/
+#ErrorDocument 403 /page-introuvable/
+#ErrorDocument 404 /page-introuvable/
