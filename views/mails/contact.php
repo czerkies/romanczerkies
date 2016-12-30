@@ -12,7 +12,7 @@ $template = '
         }
       </style>
     </head>
-    <body style="width:100%;padding:25px;background:#fafafa;color:#444;">
+    <body style="width:100%;padding:25px;background:#fefefe;color:#444;">
       <h1 style="margin:0;font-size:24px;">' . H1 . '</h1>
       <h2 style="margin:0;font-size:24px;">' . H2 . '</h2>
       <div style="margin:25px 0;">
