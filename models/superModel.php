@@ -16,6 +16,7 @@ class superModel extends superController {
   *
   * @param
   * @return Object $pdo Instance de la connexion via PDO
+  *
   */
   public function pdo() {
 
@@ -48,6 +49,7 @@ class superModel extends superController {
   *
   * @param string $file_name est le nom du fichier.
   * @return Object $pdo Instance de la connexion via PDO
+  *
   */
   public function metaDatas($file_name) {
 

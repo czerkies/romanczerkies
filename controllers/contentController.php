@@ -22,7 +22,7 @@ class contentController extends superController {
   */
   public function home() {
 
-    $meta['file_name'] = 'home';
+    $meta['file_name'] = __FUNCTION__;
 
     $db = new publicModel();
     $hub = $db->hubDatas();

@@ -56,18 +56,17 @@ class superController {
   }
 
   /**
-  * Renvoit et affiche une page de type 404.
+  * Renvoie et affiche une page de type 404.
   *
   * @param void
   * @return void
+  *
   */
   public function errorUrl() {
 
-    $meta['file_name'] = __FUNCTION__;
-
     // header pour document error 404
     header('http/1.0 404 Not Found');
-    $this->render($meta);
+    $this->render($meta = ['file_name' => __FUNCTION__]);
     exit;
 
   }
@@ -80,6 +79,7 @@ class superController {
   * @param String $function Récupère le nom de la method.
   * @param String $explain Text d'explication de l'erreur.
   * @return String $error (echo)
+  *
   */
   public function displayError($class = NULL, $function = NULL, $explain = NULL) {
 
