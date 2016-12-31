@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /page-introuvable/
+
+Sitemap: http://romanczerkies.fr/sitemap.php
