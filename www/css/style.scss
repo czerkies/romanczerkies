@@ -9,7 +9,7 @@ $gout: 2.5vw;
 $border:  1px solid;
 $ft: 1.25em;
 $transitionColor: color 200ms cubic-bezier(.25, .1, .25, 1);
-$animationTime: 1100ms;
+$animationTime: 1250ms;
 
 $twitter: #1da1f2;
 $linkedin: #0077b5;
@@ -253,7 +253,7 @@ form {
 @keyframes header_event {
   0% {
     opacity: 0;
-    transform: translateY($marg);
+    transform: translateY(calc(#{$marg} + 50px));
   }
   50% {
     opacity: 1;
@@ -267,7 +267,7 @@ form {
 @keyframes li_event {
   0% {
     opacity: 0;
-    transform: translateX(-$marg);
+    transform: translateX(calc(-#{$marg} + -50px));
   }
   50% {
     opacity: 1;
