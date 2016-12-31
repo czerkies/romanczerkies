@@ -38,7 +38,7 @@ class functionsController extends superController {
       $field .= '<input type="' . $type . '"';
       if ($name) $field .= ' name="' . $name . '"';
       if ($id) $field .= ' id="' . $name . '"';
-      if ($attr) foreach ($attr as $key => $value) if(!empty($val)) $field .= ' ' . $key . '="' . $value . '"';
+      if ($attr) foreach ($attr as $key => $val) if(!empty($val)) $field .= ' ' . $key . '="' . $val . '"';
       if (isset($_POST[$name]) && !empty($_POST[$name])) $field .= ' value="' . $_POST[$name] . '"';
       elseif ($value) $field .=  ' value="' . $value . '"';
       if ($required) $field .= ' required';
