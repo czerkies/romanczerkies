@@ -217,6 +217,7 @@ form {
     border-width: 0 0 0 1px;
     border-style: solid;
     border-color: $color2;
+    border-radius: 0;
     outline: none;
     background: transparent;
     font-size: $ft;
@@ -280,7 +281,7 @@ form {
 
 /* MediaQueries */
 
-@media (max-device-width: 980px) {
+@media (max-device-width: 700px) {
   * {
     font-size: 39px;
   }
