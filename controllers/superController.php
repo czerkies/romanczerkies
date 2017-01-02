@@ -17,6 +17,7 @@ class superController {
   *
   * @param Array $meta Chemin du fichier à afficher
   * @return void
+  *
   */
   public function render($meta = array(), $datas = array()) {
 

@@ -7,12 +7,13 @@
  *
  * @version v10.0.0
  * @link http://romanczerkies.fr/
- * @since v10.0.0-alpha.1
+ * @since v10.0.0
+ *
  */
 class superModel extends superController {
 
   /**
-  * Fonction de connection à la bdd prenant compte les parametres de param.php
+  * Fonction de connection à la bdd prenant compte les parametres de params.php
   *
   * @param
   * @return Object $pdo Instance de la connexion via PDO
