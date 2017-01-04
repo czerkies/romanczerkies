@@ -132,37 +132,36 @@ class functionsController extends superController {
   */
   public function contactPost() {
 
-    $returnOK = "Votre message a bien été envoyé.";
-
-    $returnKO = "Votre message n'a pas été envoyé.";
+    $response = '';
 
     // Vérification des champs
-    if (isset($_POST[1]) && isset($_POST[2])
-    && !empty($_POST[1]) && strlen($_POST[1]) >= 5
-    && empty($_POST[2])) {
+    if (!isset($_POST[1]) || !isset($_POST[2])) $response = "Mais, enfin, cesse de t'amuser avec ton inspecteur :@";
+    elseif (isset($_COOKIE['request'])) $response = "Attendez un petit peu, je crois que je n'ai toujours pas lu votre premier message !";
+    elseif (!empty($_POST[2])) $response = "Tu es un Robot ? Dommage, j'en suis un aussi :p";
+    elseif (empty($_POST[1])) $response = "Ce message me semble un peu vide pour l'envoyer :/";
+    elseif (strlen($_POST[1]) < 5) $response = "Il est vraiment court ce message, pour la peine je ne l'envoie pas :o";
+    elseif (isset($_COOKIE['message']) && $_POST[1] === $_COOKIE['message']) $response = "Vous ne seriez pas en train de me renvoyer exactement le même message ?! -_-";
 
+    if(empty($response)) {
+
+      // Filtre du le post 1
       $message = htmlentities($_POST[1], ENT_QUOTES);
 
-      $words = explode(' ', trim($message, "\t\n\r\0\x0B"));
-
+      // Récupération des mails
       $emails = '';
-      $urls = '';
+      foreach (explode(' ', trim($message, "\t\n\r\0\x0B")) as $value) if(filter_var($value, FILTER_VALIDATE_EMAIL)) $emails .= $value . ', ';
 
-      foreach ($words as $value) {
+      if (self::sendMail($emails, 'Contact', $message)) {
 
-        if(filter_var($value, FILTER_VALIDATE_EMAIL)) $emails .= $value . ', ';
-        if(filter_var($value, FILTER_VALIDATE_URL)) $urls .= $value;
+        $response = "Nickel, ton message a bien été envoyé !";
+        setCookie('message', $message, time()+3600); // Expire 1 heure
+        setCookie('request', TRUE, time()+60); // Expire 1 minute
 
-      }
-
-      if (self::sendMail($emails, 'Contact', $message)) return $returnOK;
-      else return $returnKO;
-
-    } else {
-
-      return $returnKO;
+      } else $response = "Mince, il y'a eu comme un problème lorsque j'ai voulu envoyer ton message :/";
 
     }
+
+    return $response;
 
   }
 
