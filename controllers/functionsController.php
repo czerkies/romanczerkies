@@ -187,8 +187,8 @@ class functionsController extends superController {
       $emails = '';
       foreach (explode(' ', trim($message, "\t\n\r\0\x0B")) as $value) if(filter_var($value, FILTER_VALIDATE_EMAIL)) $emails .= $value . ', ';
 
-      //if (self::sendMail($emails, 'Contact', $message)) {
-      if (TRUE) {
+      if (self::sendMail($emails, 'Contact', $message)) {
+
         $response = "Nickel, ton message a bien été envoyé ! 🤓👍";
         setCookie('message', $message, time()+3600); // Expire 1 heure
         setCookie('request', TRUE, time()+60); // Expire 1 minute
