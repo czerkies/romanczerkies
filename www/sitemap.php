@@ -9,6 +9,7 @@
   $model = new superModel();
   $sql = "SELECT url FROM pages WHERE restriction = 0 AND url IS NOT NULL";
   $datas = $model->pdo()->query($sql);
+  $urls = $datas->fetchAll();
 
   echo '<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
@@ -18,9 +19,9 @@
   <loc>http://<?= $_SERVER['SERVER_NAME'] . RACINE; ?></loc>
   <priority>1</priority>
 </url>
-<?php if($datas->fetchAll()) foreach ($datas->fetchAll() as $value) { ?>
+<?php if($urls) foreach ($url as $value): ?>
   <url>
     <loc>http://<?= $_SERVER['SERVER_NAME'] . $value['url']; ?></loc>
   </url>
-<?php } ?>
+<?php endforeach; ?>
 </urlset>
