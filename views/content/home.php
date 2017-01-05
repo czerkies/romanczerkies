@@ -13,7 +13,7 @@
     <form method="post">
       <?php $functions->fieldsFormInput(2); ?>
       <div>
-        <?php $functions->fieldsFormTextarea(1, TRUE, TRUE, FALSE, array('minlength' => 5, 'title' => 'Votre message', 'placeholder' => $post)); ?>
+        <?php $functions->fieldsFormTextarea(1, TRUE, FALSE, FALSE, array('title' => 'Votre message', 'placeholder' => $post)); ?>
       </div>
       <div>
         <?php $functions->fieldsFormInput('', 'submit', FALSE, FALSE, 'Envoyer', array('title' => 'Envoyer votre message')); ?>

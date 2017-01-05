@@ -10,7 +10,7 @@
   </head>
   <body>
     <header>
-      <a href="<?= RACINE; ?>" title="Accueil">
+      <a href="<?= RACINE; ?>" title="Accueil ou revoir la superbe animation">
         <h1><?= H1; ?></h1>
         <h2><?= H2; ?></h2>
       </a>
