@@ -139,9 +139,9 @@ class functionsController extends superController {
 
     elseif (isset($_COOKIE['message']) && $_POST[1] === $_COOKIE['message']) $response = "Vous ne seriez pas en train de me renvoyer exactement le même message ?! 😑";
 
-    elseif (isset($_COOKIE['request'])) $response = "Attendez un petit peu, je crois que je n'ai toujours pas lu votre premier message 🤓";
+    elseif (isset($_COOKIE['request'])) $response = "Attendez un petit peu, je crois que je n'ai toujours pas lu votre premier message. 🤓";
 
-    elseif (!empty($_POST[2])) $response = "Tu es un Robot ? Dommage, j'en suis un aussi. 😜";
+    elseif (!empty($_POST[2])) $response = "Tu es un robot ? Dommage, j'en suis un aussi. 😜";
 
     elseif (empty($_POST[1])) {
 
@@ -152,12 +152,12 @@ class functionsController extends superController {
 
       } elseif ($_COOKIE['empty'] == 1) {
 
-        $response = "Enfaite, vous aimez la petite animation. 😆";
+        $response = "En fait, vous aimez la petite animation. 😆";
         setCookie('empty', 2, time()+60);
 
       } elseif ($_COOKIE['empty'] == 2) {
 
-        $response = "Bon, ça devient inquiétant. 🤔";
+        $response = "Bon, là, ça devient inquiétant. 🤔";
         setCookie('empty', 3, time()+60);
 
       } elseif ($_COOKIE['empty'] == 3) {
@@ -167,18 +167,17 @@ class functionsController extends superController {
 
       } elseif ($_COOKIE['empty'] == 4) {
 
-        $response = "J'attend votre message moi ! 😢";
+        $response = "J'attends votre message moi ! 😢";
+        setCookie('empty', 4, time()+600);
 
       }
 
     } elseif (strlen($_POST[1]) < 5) {
 
       $response = "Il est vraiment court ce message, pour la peine je ne l'envoie pas. 😧";
-      if (isset($_COOKIE['emtpy'])) setCookie($_COOKIE['empty'], 0, 0);
+      if (isset($_COOKIE['empty'])) unset($_COOKIE['empty']); setCookie('empty', '', -1);
 
-    }
-
-    if (empty($response)) {
+    } elseif (empty($response)) {
 
       // Filtre du le post 1
       $message = htmlentities($_POST[1], ENT_QUOTES);
@@ -192,8 +191,9 @@ class functionsController extends superController {
         $response = "Nickel, ton message a bien été envoyé ! 🤓👍";
         setCookie('message', $message, time()+3600); // Expire 1 heure
         setCookie('request', TRUE, time()+60); // Expire 1 minute
+        if (isset($_COOKIE['empty'])) unset($_COOKIE['empty']); setCookie('empty', '', -1);
 
-      } else $response = "Mince, il y'a eu comme un problème lorsque j'ai voulu envoyer ton message. 😕";
+      } else $response = "Mince, il ya eu comme un problème lorsque j'ai voulu envoyer ton message. 😕";
 
     }
 

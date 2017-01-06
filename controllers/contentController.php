@@ -32,9 +32,11 @@ class contentController extends superController {
     if ($_POST) $post = $functions->contactPost();
     else $post = NULL;
 
+    $required = isset($_COOKIE['empty']) && $_COOKIE['empty'] == 4 ? TRUE : FALSE;
+
     $this->render(
       $meta,
-      ['hub' => $hub, 'functions' => $functions, 'post' => $post]
+      ['hub' => $hub, 'functions' => $functions, 'post' => $post, 'required' => $required]
     );
 
   }
