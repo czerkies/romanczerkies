@@ -1,0 +1,231 @@
+/* Générique */
+
+* {
+  box-sizing: border-box;
+  font: 300 16px/1.5  "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: .1em;
+  color: $color1;
+}
+
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  margin: 0;
+  background: $color3;
+}
+
+a {
+  text-decoration: none;
+  color: $color1;
+  transition: $transitionColor;
+  outline: none;
+}
+
+/* Header */
+
+header {
+  padding: 0 0 0 $marg;
+  border-bottom: $border $color2;
+  display: flex;
+  overflow: hidden;
+  > * {
+    border-left: $border $color2;
+  }
+  a {
+    padding: $gout;
+    h1,
+    h2 {
+      margin: 0;
+      padding: 0;
+      font-size: $fontSize_2;
+      transition: $transitionColor;
+    }
+    h1 {
+      animation: header_event #{$animationTime}ms cubic-bezier(.25, .1, .25, 1) 0ms backwards;
+    }
+    h2 {
+      animation: header_event #{$animationTime}ms cubic-bezier(.25, .1, .25, 1) 250ms backwards;
+    }
+    &:focus {
+      h1,
+      h2 {
+        color: $color4;
+      }
+    }
+  }
+}
+
+/* Nav */
+
+nav {
+  padding: 0 0 0 $marg;
+  border-bottom: $border $color2;
+  > * {
+    border-left: $border $color2;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 1.25vw 0;
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
+    li {
+      align-self: flex-start;
+      a,
+      label {
+        display: block;
+        padding: 1.25vw $gout;
+        font-size: $fontSize_1;
+      }
+      a {
+        &[href*='twitter'] {
+          &:hover,
+          &:focus {
+            color: rgba($twitter, 1);
+          }
+          &:active {
+            color: rgba($twitter, .25);
+          }
+        }
+        &[href*='linkedin'] {
+          &:hover,
+          &:focus {
+            color: rgba($linkedin, 1);
+          }
+          &:active {
+            color: rgba($linkedin, .25);
+          }
+        }
+        &[href*='github'] {
+          &:hover,
+          &:focus {
+            color: rgba($github, 1);
+          }
+          &:active {
+            color: rgba($github, .25);
+          }
+        }
+        &[href*='strava'] {
+          &:hover,
+          &:focus {
+            color: rgba($strava, 1);
+          }
+          &:active {
+            color: rgba($strava, .25);
+          }
+        }
+      }
+      label {
+        cursor: pointer;
+        transition: $transitionColor;
+        &:hover {
+          color: $color4;
+        }
+        &:active {
+          color: $color2;
+        }
+      }
+      @for $i from 0 through $hubList {
+        &:nth-child(#{$i + 1}) {
+          animation: li_event #{$animationTime}ms cubic-bezier(.25, .1, .25, 1) #{100 * $i}ms backwards;
+        }
+      }
+    }
+  }
+}
+
+/* Article */
+
+article {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  padding: 0 0 0 $marg;
+  > * {
+    flex: 1;
+    border-left: $border $color2;
+  }
+  p {
+    margin: 0;
+    padding: $gout;
+    font-size: 1em;
+  }
+  a {
+    &:hover,
+    &:focus {
+      color: $color4;
+    }
+    &:active {
+      color: $color2;
+    }
+  }
+}
+
+/* Formulaire */
+
+form {
+  margin: 0;
+  input[type=text] {
+    display: none;
+  }
+  > div {
+    padding: 0 0 0 $marg;
+    border-bottom: $border $color2;
+    display: flex;
+    overflow: hidden;
+  }
+  ,
+  > div:last-child {
+    border-bottom: none;
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+  }
+  > div:last-child {
+    margin: 0 0 0 $marg;
+    padding: 0;
+    border-left: $border $color2;
+  }
+  textarea {
+    width: 100%;
+    min-height: calc((1.5em * 4) + (2.5vw * 2));
+    margin: 0;
+    padding: $gout;
+    border-width: 0 0 0 1px;
+    border-style: solid;
+    border-color: $color2;
+    border-radius: 0;
+    outline: none;
+    background: transparent;
+    font-size: $fontSize_1;
+    transition: background 250ms ease;
+    &:focus {
+      background: $color2;
+    }
+  }
+  input[type=submit] {
+    margin: 0;
+    padding: $gout;
+    background: transparent;
+    border: none;
+    align-self: flex-start;
+    font-size: $fontSize_1;
+    color: $color1;
+    cursor: pointer;
+    outline: none;
+    transition: $transitionColor;
+    animation: li_event #{$animationTime}ms cubic-bezier(.25, .1, .25, 1) 500ms backwards;
+    &:hover,
+    &:focus {
+      color: $color4;
+    }
+    &:active {
+      color: $color2;
+    }
+  }
+}
