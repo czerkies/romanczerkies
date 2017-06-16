@@ -1,0 +1,31 @@
+/* Article */
+
+article {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  padding: 0 0 0 $marg;
+
+  > * {
+    flex: 1;
+    border-left: $border $color2;
+  }
+
+  p {
+    margin: 0;
+    padding: $gout;
+    font-size: 1em;
+  }
+
+  a {
+
+    &:hover,
+    &:focus {
+      color: $color4;
+    }
+
+    &:active {
+      color: $color2;
+    }
+  }
+}

@@ -1,26 +1,6 @@
-/* Variables */
+/* SCSS */
 
-$color1: #444;
-$color4: #aaa;
-$color2: #ededed;
-$color3: #fefefe;
-$marg: 10vw;
-$gout: 2.5vw;
-$border:  1px solid;
-$filterBlur: 8px;
-$fontSize_1: 1.25em;
-$fontSize_2: 2em;
-$transitionColor: color 200ms cubic-bezier(.25, .1, .25, 1);
-$animationTime: 1250;
-
-$hubList: 4;
-$twitter: #1da1f2;
-$linkedin: #0077b5;
-$github: #333;
-$strava: #fc4c02;
-
-@import '_style.scss';
-
-@import '_keyframes.scss';
-
-@import '_mediaqueries.scss';
+@import 'abstracts/_module.scss',
+  'base/_module.scss',
+  'components/_module.scss',
+  'layout/_module.scss';

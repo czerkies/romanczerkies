@@ -1,0 +1,15 @@
+/* Reset */
+
+* {
+  box-sizing: border-box;
+  font: 300 16px/1.5  "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: .1em;
+  color: $color1;
+
+  @media (#{$maxDeviceWith}) {
+    font-size: 39px;
+  }
+}

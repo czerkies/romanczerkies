@@ -2,19 +2,20 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+const sassfiles = 'www/css/**/*.scss';
 
 gulp.task('sass', function () {
-  return gulp.src('www/css/*.scss')
+  return gulp.src(sassfiles)
     .pipe(sass({outputStyle: ''}).on('error', sass.logError))
     .pipe(gulp.dest('www/css/'));
 });
 
 gulp.task('watch:sass', function () {
-  gulp.watch('www/css/*.scss', ['sass']);
+  gulp.watch(sassfiles, ['sass']);
 });
 
-gulp.task('sass:compressed', function() {
-  return gulp.src('www/css/*.scss')
+gulp.task('compressed:sass', function() {
+  return gulp.src(sassfiles)
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(gulp.dest('www/css/'));
 });

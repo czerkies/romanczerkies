@@ -1,6 +1,8 @@
-@charset "UTF-8";
+/* SCSS */
+/* Abstracts */
 /* Variables */
-/* Générique */
+/* Base */
+/* Reset */
 * {
   box-sizing: border-box;
   font: 300 16px/1.5  "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
@@ -9,7 +11,11 @@
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: .1em;
   color: #444; }
+  @media (max-device-width: 700px) {
+    * {
+      font-size: 39px; } }
 
+/* Body */
 body {
   display: flex;
   flex-flow: column;
@@ -17,107 +23,13 @@ body {
   margin: 0;
   background: #fefefe; }
 
+/* Components */
+/* Link */
 a {
   text-decoration: none;
   color: #444;
   transition: color 200ms cubic-bezier(0.25, 0.1, 0.25, 1);
   outline: none; }
-
-/* Header */
-header {
-  padding: 0 0 0 10vw;
-  border-bottom: 1px solid #ededed;
-  display: flex;
-  overflow: hidden; }
-  header > * {
-    border-left: 1px solid #ededed; }
-  header a {
-    padding: 2.5vw; }
-    header a h1,
-    header a h2 {
-      margin: 0;
-      padding: 0;
-      font-size: 2em;
-      transition: color 200ms cubic-bezier(0.25, 0.1, 0.25, 1); }
-    header a h1 {
-      animation: header_event 1250ms cubic-bezier(0.25, 0.1, 0.25, 1) 0ms backwards; }
-    header a h2 {
-      animation: header_event 1250ms cubic-bezier(0.25, 0.1, 0.25, 1) 250ms backwards; }
-    header a:focus h1,
-    header a:focus h2 {
-      color: #aaa; }
-
-/* Nav */
-nav {
-  padding: 0 0 0 10vw;
-  border-bottom: 1px solid #ededed; }
-  nav > * {
-    border-left: 1px solid #ededed; }
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 1.25vw 0;
-    display: flex;
-    flex-flow: column;
-    overflow: hidden; }
-    nav ul li {
-      align-self: flex-start; }
-      nav ul li a,
-      nav ul li label {
-        display: block;
-        padding: 1.25vw 2.5vw;
-        font-size: 1.25em; }
-      nav ul li a[href*='twitter']:hover, nav ul li a[href*='twitter']:focus {
-        color: #1da1f2; }
-      nav ul li a[href*='twitter']:active {
-        color: rgba(29, 161, 242, 0.25); }
-      nav ul li a[href*='linkedin']:hover, nav ul li a[href*='linkedin']:focus {
-        color: #0077b5; }
-      nav ul li a[href*='linkedin']:active {
-        color: rgba(0, 119, 181, 0.25); }
-      nav ul li a[href*='github']:hover, nav ul li a[href*='github']:focus {
-        color: #333333; }
-      nav ul li a[href*='github']:active {
-        color: rgba(51, 51, 51, 0.25); }
-      nav ul li a[href*='strava']:hover, nav ul li a[href*='strava']:focus {
-        color: #fc4c02; }
-      nav ul li a[href*='strava']:active {
-        color: rgba(252, 76, 2, 0.25); }
-      nav ul li label {
-        cursor: pointer;
-        transition: color 200ms cubic-bezier(0.25, 0.1, 0.25, 1); }
-        nav ul li label:hover {
-          color: #aaa; }
-        nav ul li label:active {
-          color: #ededed; }
-      nav ul li:nth-child(1) {
-        animation: li_event 1250ms cubic-bezier(0.25, 0.1, 0.25, 1) 0ms backwards; }
-      nav ul li:nth-child(2) {
-        animation: li_event 1250ms cubic-bezier(0.25, 0.1, 0.25, 1) 100ms backwards; }
-      nav ul li:nth-child(3) {
-        animation: li_event 1250ms cubic-bezier(0.25, 0.1, 0.25, 1) 200ms backwards; }
-      nav ul li:nth-child(4) {
-        animation: li_event 1250ms cubic-bezier(0.25, 0.1, 0.25, 1) 300ms backwards; }
-      nav ul li:nth-child(5) {
-        animation: li_event 1250ms cubic-bezier(0.25, 0.1, 0.25, 1) 400ms backwards; }
-
-/* Article */
-article {
-  flex: 1;
-  display: flex;
-  flex-flow: column;
-  padding: 0 0 0 10vw; }
-  article > * {
-    flex: 1;
-    border-left: 1px solid #ededed; }
-  article p {
-    margin: 0;
-    padding: 2.5vw;
-    font-size: 1em; }
-  article a:hover, article a:focus {
-    color: #aaa; }
-  article a:active {
-    color: #ededed; }
 
 /* Formulaire */
 form {
@@ -171,7 +83,31 @@ form {
     form input[type=submit]:active {
       color: #ededed; }
 
-/* Keyframes */
+/* Layout */
+/* Header */
+header {
+  padding: 0 0 0 10vw;
+  border-bottom: 1px solid #ededed;
+  display: flex;
+  overflow: hidden; }
+  header > * {
+    border-left: 1px solid #ededed; }
+  header a {
+    padding: 2.5vw; }
+    header a h1,
+    header a h2 {
+      margin: 0;
+      padding: 0;
+      font-size: 2em;
+      transition: color 200ms cubic-bezier(0.25, 0.1, 0.25, 1); }
+    header a h1 {
+      animation: header_event 1250ms cubic-bezier(0.25, 0.1, 0.25, 1) 0ms backwards; }
+    header a h2 {
+      animation: header_event 1250ms cubic-bezier(0.25, 0.1, 0.25, 1) 150ms backwards; }
+    header a:focus h1,
+    header a:focus h2 {
+      color: #aaa; }
+
 @keyframes header_event {
   0% {
     opacity: 0;
@@ -183,6 +119,60 @@ form {
     opacity: 1;
     filter: blur(0);
     transform: translateY(0); } }
+
+/* Navigation */
+nav {
+  padding: 0 0 0 10vw;
+  border-bottom: 1px solid #ededed; }
+  nav > * {
+    border-left: 1px solid #ededed; }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 1.25vw 0;
+    display: flex;
+    flex-flow: column;
+    overflow: hidden; }
+    nav ul li {
+      align-self: flex-start; }
+      nav ul li a,
+      nav ul li label {
+        display: block;
+        padding: 1.25vw 2.5vw;
+        font-size: 1.25em; }
+      nav ul li a[href*='twitter']:hover, nav ul li a[href*='twitter']:focus {
+        color: #1da1f2; }
+      nav ul li a[href*='twitter']:active {
+        color: rgba(29, 161, 242, 0.25); }
+      nav ul li a[href*='linkedin']:hover, nav ul li a[href*='linkedin']:focus {
+        color: #0077b5; }
+      nav ul li a[href*='linkedin']:active {
+        color: rgba(0, 119, 181, 0.25); }
+      nav ul li a[href*='github']:hover, nav ul li a[href*='github']:focus {
+        color: #333333; }
+      nav ul li a[href*='github']:active {
+        color: rgba(51, 51, 51, 0.25); }
+      nav ul li a[href*='strava']:hover, nav ul li a[href*='strava']:focus {
+        color: #fc4c02; }
+      nav ul li a[href*='strava']:active {
+        color: rgba(252, 76, 2, 0.25); }
+      nav ul li label {
+        cursor: pointer;
+        transition: color 200ms cubic-bezier(0.25, 0.1, 0.25, 1); }
+        nav ul li label:hover {
+          color: #aaa; }
+        nav ul li label:active {
+          color: #ededed; }
+      nav ul li:nth-child(1) {
+        animation: li_event 1250ms cubic-bezier(0.25, 0.1, 0.25, 1) 0ms backwards; }
+      nav ul li:nth-child(2) {
+        animation: li_event 1250ms cubic-bezier(0.25, 0.1, 0.25, 1) 100ms backwards; }
+      nav ul li:nth-child(3) {
+        animation: li_event 1250ms cubic-bezier(0.25, 0.1, 0.25, 1) 200ms backwards; }
+      nav ul li:nth-child(4) {
+        animation: li_event 1250ms cubic-bezier(0.25, 0.1, 0.25, 1) 300ms backwards; }
+      nav ul li:nth-child(5) {
+        animation: li_event 1250ms cubic-bezier(0.25, 0.1, 0.25, 1) 400ms backwards; }
 
 @keyframes li_event {
   0% {
@@ -196,7 +186,20 @@ form {
     filter: blur(0);
     transform: translateX(0); } }
 
-/* MediaQueries */
-@media (max-device-width: 700px) {
-  * {
-    font-size: 39px; } }
+/* Article */
+article {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  padding: 0 0 0 10vw; }
+  article > * {
+    flex: 1;
+    border-left: 1px solid #ededed; }
+  article p {
+    margin: 0;
+    padding: 2.5vw;
+    font-size: 1em; }
+  article a:hover, article a:focus {
+    color: #aaa; }
+  article a:active {
+    color: #ededed; }
