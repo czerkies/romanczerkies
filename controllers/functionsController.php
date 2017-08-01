@@ -21,8 +21,8 @@ class functionsController extends superController {
   * @param $placeholder string
   * @param $em string
   * @param $msg array
-  * @param $class (option) string
-  * @param $input (option) string
+  * @param $class string (optional)
+  * @param $input string (optional)
   *
   * @return $field string
   *
@@ -64,8 +64,8 @@ class functionsController extends superController {
   * @param $placeholder string
   * @param $em string
   * @param $msg array
-  * @param $class (option) string
-  * @param $input (option) string
+  * @param $class string (optional)
+  * @param $input string (optional)
   *
   * @return $field string
   *
@@ -95,7 +95,7 @@ class functionsController extends superController {
   * @param $subject string Sujet du mail
   * @param $content string Content du mail
   * @param $templateName string Nom du template ('contact')
-  * @param $from string (option) Mail de EMAIL
+  * @param $from string (optional) Mail de EMAIL
   *
   * @return bool Retour de la fonction mail
   *
