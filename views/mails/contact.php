@@ -10,13 +10,29 @@ $template = '
         * {
           font: 300 16px/1.5 helvetica, arial;
         }
+        body {
+          background: #fefefe;
+          color: #444;
+        }
+        h1,
+        h2 {
+          margin: 0;
+          font-size: 24px;
+        }
+        div {
+          margin: 25px 0;
+        }
+        div > p {
+          margin: 0;
+          font-size: 16px;
+        }
       </style>
     </head>
-    <body style="width:100%;padding:25px;background:#fefefe;color:#444;">
-      <h1 style="margin:0;font-size:24px;">' . H1 . '</h1>
-      <h2 style="margin:0;font-size:24px;">' . H2 . '</h2>
-      <div style="margin:25px 0;">
-        <p style="margin:0;font-size:16px;"><b>Message :</b><br>
+    <body>
+      <h1>' . H1 . '</h1>
+      <h2>' . H2 . '</h2>
+      <div>
+        <p><b>Message :</b><br>
         ' . $content . '</p>
       </div>
     </body>
