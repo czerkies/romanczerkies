@@ -6,14 +6,14 @@
         </li>
 <?php endforeach; ?>
         <li>
-          <label for="1" title="Contacter">Contact</label>
+          <label for="contact" title="Contacter">Contact</label>
         </li>
       </ul>
     </nav>
     <form method="post">
-      <?php $functions->fieldsFormInput(2); ?>
+      <?php $functions->fieldsFormInput('rbt'); ?>
       <div>
-        <?php $functions->fieldsFormTextarea(1, TRUE, $required, FALSE, array('title' => 'Votre message', 'placeholder' => $post)); ?>
+        <?php $functions->fieldsFormTextarea('contact', TRUE, $required, FALSE, array('title' => 'Votre message', 'placeholder' => $post)); ?>
       </div>
       <div>
         <?php $functions->fieldsFormInput('', 'submit', FALSE, FALSE, 'Envoyer', array('title' => 'Envoyer votre message')); ?>

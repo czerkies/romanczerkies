@@ -6,11 +6,11 @@ include_once '../conf/params.php';
 // Fonction AutoLoad
 function autoloader($class) {
 
-  if(strpos($class, 'Controller') !== FALSE) {
+  if (strpos($class, 'Controller') !== FALSE) {
     if(file_exists('../controllers/'.$class.'.php')) include_once '../controllers/'.$class.'.php';
   }
 
-  if(strpos($class, 'Model') !== FALSE) {
+  if (strpos($class, 'Model') !== FALSE) {
     if(file_exists('../models/'.$class.'.php')) include_once '../models/'.$class.'.php';
   }
 
@@ -22,8 +22,8 @@ $controller = (isset($_GET['controller']) && !empty($_GET['controller'])) ? html
 $method = (isset($_GET['method']) && !empty($_GET['method'])) ? htmlentities($_GET['method']) : 'home';
 
 // Si fichier ou method non existante assignation erreur 404.
-if(!file_exists('../controllers/'.$controller.'Controller.php')
-|| !method_exists($controller . 'Controller', $method)) {
+if (!file_exists('../controllers/'.$controller.'Controller.php')
+  || !method_exists($controller . 'Controller', $method)) {
 
   $controller = 'content';
   $method = 'errorUrl';
