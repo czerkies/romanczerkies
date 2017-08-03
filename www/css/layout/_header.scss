@@ -12,13 +12,16 @@ header {
 
   a {
     padding: $gout;
+    color: $color1;
 
     h1,
     h2 {
       margin: 0;
       padding: 0;
       font-size: $fontSize_2;
-      transition: $transitionColor;
+      font-weight: $fontWeight;
+      letter-spacing: $letterSpacing;
+      transition: color $transition;
     }
 
     h1 {

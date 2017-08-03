@@ -8,9 +8,12 @@ $marg: 10vw;
 $gout: 2.5vw;
 $border:  1px solid;
 $filterBlur: 8px;
-$fontSize_1: 1.25em;
-$fontSize_2: 2em;
-$transitionColor: color 200ms cubic-bezier(.25, .1, .25, 1);
+$fontSize_1: 2rem;
+$fontSize_2: 4rem;
+$fontWeight: 600;
+$letterSpacing: .075rem;
+$lineHeight: 1.25;
+$transition: 200ms cubic-bezier(.25, .1, .25, 1);
 $animationDuration: 1250;
 $maxDeviceWith: 'max-device-width: 700px';
 

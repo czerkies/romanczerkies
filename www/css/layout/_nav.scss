@@ -3,9 +3,11 @@
 nav {
   padding: 0 0 0 $marg;
   border-bottom: $border $color2;
+
   > * {
     border-left: $border $color2;
   }
+
   ul {
     list-style: none;
     margin: 0;
@@ -13,63 +15,87 @@ nav {
     display: flex;
     flex-flow: column;
     overflow: hidden;
+
     li {
       align-self: flex-start;
+
       a,
       label {
         display: block;
         padding: 1.25vw $gout;
         font-size: $fontSize_1;
+        letter-spacing: $letterSpacing;
       }
+
       a {
+        color: rgba($color1, .75);
+
         &[href*='twitter'] {
+
           &:hover,
           &:focus {
-            color: rgba($twitter, 1);
+            color: $twitter;
           }
+
           &:active {
             color: rgba($twitter, .25);
           }
+
         }
+
         &[href*='linkedin'] {
+
           &:hover,
           &:focus {
-            color: rgba($linkedin, 1);
+            color: $linkedin;
           }
+
           &:active {
             color: rgba($linkedin, .25);
           }
         }
+
         &[href*='github'] {
+
           &:hover,
           &:focus {
-            color: rgba($github, 1);
+            color: $github;
           }
+
           &:active {
             color: rgba($github, .25);
           }
         }
+
         &[href*='strava'] {
+
           &:hover,
           &:focus {
-            color: rgba($strava, 1);
+            color: $strava;
           }
+
           &:active {
             color: rgba($strava, .25);
           }
         }
       }
+
       label {
+        color: rgba($color1, .75);
         cursor: pointer;
-        transition: $transitionColor;
+        transition: color $transition;
+
         &:hover {
           color: $color4;
         }
+
         &:active {
           color: $color2;
         }
       }
+
       @for $i from 0 through $hubList {
+
         &:nth-child(#{$i + 1}) {
           animation: li_event #{$animationDuration}ms cubic-bezier(.25, .1, .25, 1) #{100 * $i}ms backwards;
         }

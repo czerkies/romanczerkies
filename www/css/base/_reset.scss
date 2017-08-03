@@ -2,14 +2,15 @@
 
 * {
   box-sizing: border-box;
-  font: 300 16px/1.5  "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  letter-spacing: .1em;
-  color: $color1;
+}
+
+html {
+  font: $fontWeight 100%/1.25  "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
 
   @media (#{$maxDeviceWith}) {
-    font-size: 39px;
+    font-size: 30px;
   }
 }

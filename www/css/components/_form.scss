@@ -30,7 +30,7 @@ form {
 
   textarea {
     width: 100%;
-    min-height: calc((1.5em * 4) + (2.5vw * 2));
+    min-height: calc((#{$lineHeight}em * 4) + (#{$gout} * 2));
     margin: 0;
     padding: $gout;
     border-width: 0 0 0 1px;
@@ -39,8 +39,12 @@ form {
     border-radius: 0;
     outline: none;
     background: transparent;
+    color: $color1;
     font-size: $fontSize_1;
-    transition: background 250ms ease;
+    font-weight: 600;
+    line-height: #{$lineHeight}em;
+    letter-spacing: 0;
+    transition: background $transition;
 
     &:focus {
       background: $color2;
@@ -53,11 +57,13 @@ form {
     background: transparent;
     border: none;
     align-self: flex-start;
+    color: rgba($color1, .75);
     font-size: $fontSize_1;
-    color: $color1;
+    font-weight: $fontWeight;
+    letter-spacing: $letterSpacing;
     cursor: pointer;
     outline: none;
-    transition: $transitionColor;
+    transition: color $transition;
     animation: li_event #{$animationDuration}ms cubic-bezier(.25, .1, .25, 1) 500ms backwards;
 
     &:hover,
