@@ -28,7 +28,7 @@ nav {
       }
 
       a {
-        color: rgba($color1, .75);
+        color: rgba($color1, $varColor1);
 
         &[href*='twitter'] {
 
@@ -38,7 +38,7 @@ nav {
           }
 
           &:active {
-            color: rgba($twitter, .25);
+            color: rgba($twitter, $varColor2);
           }
 
         }
@@ -51,7 +51,7 @@ nav {
           }
 
           &:active {
-            color: rgba($linkedin, .25);
+            color: rgba($linkedin, $varColor2);
           }
         }
 
@@ -63,7 +63,7 @@ nav {
           }
 
           &:active {
-            color: rgba($github, .25);
+            color: rgba($github, $varColor2);
           }
         }
 
@@ -75,29 +75,29 @@ nav {
           }
 
           &:active {
-            color: rgba($strava, .25);
+            color: rgba($strava, $varColor2);
           }
         }
       }
 
       label {
-        color: rgba($color1, .75);
+        color: rgba($color1, $varColor1);
         cursor: pointer;
         transition: color $transition;
 
         &:hover {
-          color: $color4;
+          color: $color1;
         }
 
         &:active {
-          color: $color2;
+          color: rgba($color1, $varColor2);
         }
       }
 
       @for $i from 0 through $hubList {
 
         &:nth-child(#{$i + 1}) {
-          animation: li_event #{$animationDuration}ms cubic-bezier(.25, .1, .25, 1) #{100 * $i}ms backwards;
+          animation: li_event #{$animationDuration - (100 * $i)}ms $cubic-bezier #{100 * $i}ms backwards;
         }
       }
     }

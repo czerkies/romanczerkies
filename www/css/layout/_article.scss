@@ -14,18 +14,19 @@ article {
   p {
     margin: 0;
     padding: $gout;
-    font-size: 1rem;
+    font-size: $fontSize_1;
   }
 
   a {
+    color: rgba($color1, $varColor1);
 
     &:hover,
     &:focus {
-      color: $color4;
+      color: $color1;
     }
 
     &:active {
-      color: $color2;
+      color: rgba($color1, $varColor2);
     }
   }
 }

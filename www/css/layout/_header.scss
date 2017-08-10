@@ -25,18 +25,18 @@ header {
     }
 
     h1 {
-      animation: header_event #{$animationDuration}ms cubic-bezier(.25, .1, .25, 1) 0ms backwards;
+      animation: header_event #{$animationDuration}ms $cubic-bezier 0ms backwards;
     }
 
     h2 {
-      animation: header_event #{$animationDuration}ms cubic-bezier(.25, .1, .25, 1) 150ms backwards;
+      animation: header_event #{$animationDuration - 150}ms $cubic-bezier 150ms backwards;
     }
 
     &:focus {
 
       h1,
       h2 {
-        color: $color4;
+        color: rgba($color1, $varColor1);
       }
     }
   }

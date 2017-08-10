@@ -41,10 +41,14 @@ form {
     background: transparent;
     color: $color1;
     font-size: $fontSize_1;
-    font-weight: 600;
+    font-weight: $fontWeight;
     line-height: #{$lineHeight}em;
     letter-spacing: 0;
     transition: background $transition;
+
+    &::-webkit-input-placeholder {
+      color: rgba($color1, $varColor1);
+    }
 
     &:focus {
       background: $color2;
@@ -64,15 +68,15 @@ form {
     cursor: pointer;
     outline: none;
     transition: color $transition;
-    animation: li_event #{$animationDuration}ms cubic-bezier(.25, .1, .25, 1) 500ms backwards;
+    animation: li_event #{$animationDuration - 500}ms $cubic-bezier 500ms backwards;
 
     &:hover,
     &:focus {
-      color: $color4;
+      color: $color1;
     }
 
     &:active {
-      color: $color2;
+      color: rgba($color1, $varColor2);
     }
   }
 }

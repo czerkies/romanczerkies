@@ -1,9 +1,9 @@
 /* Variables */
 
 $color1: #444;
-$color2: #ededed;
-$color3: #fefefe;
-$color4: #aaa;
+//$color1: green; // Color Typo
+$color2: #ededed; // Color Border
+$color3: #fefefe; // Color Background
 
 $varColor1: .5;
 $varColor2: .25;
@@ -22,8 +22,9 @@ $fontWeight: 600;
 $letterSpacing: .075rem;
 $lineHeight: 1.25;
 
-$transition: 200ms cubic-bezier(.25, .1, .25, 1);
-$animationDuration: 1250;
+$cubic-bezier: cubic-bezier(.25, .1, .25, 1);
+$transition: 200ms $cubic-bezier;
+$animationDuration: 1000;
 
 $maxDeviceWith: 'max-device-width: 700px';
 
