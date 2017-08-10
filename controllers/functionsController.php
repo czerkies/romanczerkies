@@ -135,15 +135,15 @@ class functionsController extends superController {
     $response = '';
 
     // Vérification des champs
-    if (!isset($_POST[1]) || !isset($_POST[2])) $response = "Mais, enfin, cesse de t'amuser avec ton inspecteur. :O";
+    if (!isset($_POST['msg']) || !isset($_POST['rbt'])) $response = "Mais, enfin, cesse de t'amuser avec ton inspecteur. :O";
 
-    elseif (isset($_COOKIE['message']) && $_POST[1] === $_COOKIE['message']) $response = "Vous ne seriez pas en train de me renvoyer exactement le même message ?! O_o";
+    elseif (isset($_COOKIE['message']) && $_POST['msg'] === $_COOKIE['message']) $response = "Vous ne seriez pas en train de me renvoyer exactement le même message ?! O_o";
 
     elseif (isset($_COOKIE['request'])) $response = "Attendez un petit peu, je crois que je n'ai toujours pas lu votre premier message. :)";
 
-    elseif (!empty($_POST[2])) $response = "Tu es un robot ? Dommage, j'en suis un aussi. \xF0\x9F\x98\x9C";
+    elseif (!empty($_POST['rbt'])) $response = "Tu es un robot ? Dommage, j'en suis un aussi. :p";
 
-    elseif (empty($_POST[1])) {
+    elseif (empty($_POST['msg'])) {
 
       if (!isset($_COOKIE['empty'])) {
 
@@ -172,7 +172,7 @@ class functionsController extends superController {
 
       }
 
-    } elseif (strlen($_POST[1]) < 5) {
+    } elseif (strlen($_POST['msg']) < 5) {
 
       $response = "Il est vraiment court ce message, pour la peine je ne l'envoie pas. :O";
       if (isset($_COOKIE['empty'])) unset($_COOKIE['empty']); setCookie('empty', '', -1);
@@ -180,7 +180,7 @@ class functionsController extends superController {
     } elseif (empty($response)) {
 
       // Filtre du post 1
-      $message = htmlentities($_POST[1], ENT_QUOTES);
+      $message = htmlentities($_POST['msg'], ENT_QUOTES);
 
       // Récupération des mails
       $emails = '';
