@@ -19,7 +19,7 @@
   <loc>http://<?= $_SERVER['SERVER_NAME'] . RACINE; ?></loc>
   <priority>1</priority>
 </url>
-<?php if($urls) foreach ($url as $value): ?>
+<?php if($urls) foreach ($urls as $value): ?>
   <url>
     <loc>http://<?= $_SERVER['SERVER_NAME'] . $value['url']; ?></loc>
   </url>
