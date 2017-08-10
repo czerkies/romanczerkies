@@ -3,7 +3,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 const sassFiles = 'www/css/**/*.scss';
-const sassDest = 'wwww/css';
+const sassDest = 'www/css';
 
 gulp.task('sass', function () {
   return gulp.src(sassFiles)
