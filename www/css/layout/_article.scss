@@ -8,7 +8,7 @@ article {
 
   > * {
     flex: 1;
-    border-left: $border $color2;
+    border-left: $borderWidth $borderStyle $color2;
   }
 
   p {

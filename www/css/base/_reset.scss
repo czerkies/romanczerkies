@@ -10,7 +10,7 @@
 html {
   font: $fontWeight 100%/1.25  "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
 
-  @media (#{$maxDeviceWith}) {
+  /*@media (#{$maxDeviceWith}) {
     font-size: 30px;
-  }
+  }*/
 }

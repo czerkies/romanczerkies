@@ -2,12 +2,12 @@
 
 header {
   padding: 0 0 0 $marg;
-  border-bottom: $border $color2;
+  border-bottom: $borderWidth $borderStyle $color2;
   display: flex;
   overflow: hidden;
 
   > * {
-    border-left: $border $color2;
+    border-left: $borderWidth $borderStyle $color2;
   }
 
   a {

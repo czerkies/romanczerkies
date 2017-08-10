@@ -1,20 +1,30 @@
 /* Variables */
 
 $color1: #444;
-$color4: #aaa;
 $color2: #ededed;
 $color3: #fefefe;
+$color4: #aaa;
+
+$varColor1: .5;
+$varColor2: .25;
+
 $marg: 10vw;
 $gout: 2.5vw;
-$border:  1px solid;
-$filterBlur: 8px;
+
+$borderWidth: 1px;
+$borderStyle: solid;
+
+$filterBlur: .75rem;
+
 $fontSize_1: 2rem;
 $fontSize_2: 4rem;
 $fontWeight: 600;
 $letterSpacing: .075rem;
 $lineHeight: 1.25;
+
 $transition: 200ms cubic-bezier(.25, .1, .25, 1);
 $animationDuration: 1250;
+
 $maxDeviceWith: 'max-device-width: 700px';
 
 $hubList: 4;

@@ -2,16 +2,16 @@
 
 nav {
   padding: 0 0 0 $marg;
-  border-bottom: $border $color2;
+  border-bottom: $borderWidth $borderStyle $color2;
 
   > * {
-    border-left: $border $color2;
+    border-left: $borderWidth $borderStyle $color2;
   }
 
   ul {
     list-style: none;
     margin: 0;
-    padding: 1.25vw 0;
+    padding: calc(#{$gout} / 2) 0;
     display: flex;
     flex-flow: column;
     overflow: hidden;
@@ -22,7 +22,7 @@ nav {
       a,
       label {
         display: block;
-        padding: 1.25vw $gout;
+        padding: calc(#{$gout} / 2) $gout;
         font-size: $fontSize_1;
         letter-spacing: $letterSpacing;
       }
@@ -105,14 +105,17 @@ nav {
 }
 
 @keyframes li_event {
+
   0% {
     opacity: 0;
     filter: blur($filterBlur);
     transform: translateX(calc(-#{$marg} + -100px));
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 1;
     filter: blur(0);
