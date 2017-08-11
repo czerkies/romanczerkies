@@ -10,10 +10,10 @@
   -moz-osx-font-smoothing: grayscale; }
 
 html {
-  font: 600 100%/1.25 "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
-  /*@media (max-device-width: 700px) {
-    font-size: 30px;
-  }*/ }
+  font: 600 100%/1.25 "Helvetica Neue", "Calibri Light", Roboto, sans-serif; }
+  @media (max-device-width: 700px) {
+    html {
+      font-size: 30px; } }
 
 /* Body */
 body {
@@ -212,7 +212,8 @@ article {
   article p {
     margin: 0;
     padding: 2.5vw;
-    font-size: 2rem; }
+    font-size: 2rem;
+    color: #444; }
   article a {
     color: rgba(68, 68, 68, 0.5); }
     article a:hover, article a:focus {

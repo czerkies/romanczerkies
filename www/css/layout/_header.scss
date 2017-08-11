@@ -43,14 +43,17 @@ header {
 }
 
 @keyframes header_event {
+
   0% {
     opacity: 0;
     filter: blur($filter-blur);
     transform: translate3d(0, calc(#{$marg} + 100px), 0);
   }
+
   50% {
     opacity: 1;
   }
+  
   100% {
     opacity: 1;
     filter: blur(0);
