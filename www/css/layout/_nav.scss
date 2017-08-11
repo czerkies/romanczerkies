@@ -2,10 +2,10 @@
 
 nav {
   padding: 0 0 0 $marg;
-  border-bottom: $borderWidth $borderStyle $color2;
+  border-bottom: $border-width $border-style $color-border;
 
   > * {
-    border-left: $borderWidth $borderStyle $color2;
+    border-left: $border-width $border-style $color-border;
   }
 
   ul {
@@ -23,12 +23,12 @@ nav {
       label {
         display: block;
         padding: calc(#{$gout} / 2) $gout;
-        font-size: $fontSize_1;
-        letter-spacing: $letterSpacing;
+        font-size: $fontsize-1;
+        letter-spacing: $letter-spacing;
       }
 
       a {
-        color: rgba($color1, $varColor1);
+        color: rgba($color-txt, $opacity-1);
 
         &[href*='twitter'] {
 
@@ -38,7 +38,7 @@ nav {
           }
 
           &:active {
-            color: rgba($twitter, $varColor2);
+            color: rgba($twitter, $opacity-2);
           }
 
         }
@@ -51,7 +51,7 @@ nav {
           }
 
           &:active {
-            color: rgba($linkedin, $varColor2);
+            color: rgba($linkedin, $opacity-2);
           }
         }
 
@@ -63,7 +63,7 @@ nav {
           }
 
           &:active {
-            color: rgba($github, $varColor2);
+            color: rgba($github, $opacity-2);
           }
         }
 
@@ -75,29 +75,29 @@ nav {
           }
 
           &:active {
-            color: rgba($strava, $varColor2);
+            color: rgba($strava, $opacity-2);
           }
         }
       }
 
       label {
-        color: rgba($color1, $varColor1);
+        color: rgba($color-txt, $opacity-1);
         cursor: pointer;
         transition: color $transition;
 
         &:hover {
-          color: $color1;
+          color: $color-txt;
         }
 
         &:active {
-          color: rgba($color1, $varColor2);
+          color: rgba($color-txt, $opacity-2);
         }
       }
 
-      @for $i from 0 through $hubList {
+      @for $i from 0 through $nav-list {
 
         &:nth-child(#{$i + 1}) {
-          animation: li_event #{$animationDuration - (100 * $i)}ms $cubic-bezier #{100 * $i}ms backwards;
+          animation: li_event #{$animation-duration - (100 * $i)}ms $cubic-bezier #{100 * $i}ms backwards;
         }
       }
     }
@@ -108,7 +108,7 @@ nav {
 
   0% {
     opacity: 0;
-    filter: blur($filterBlur);
+    filter: blur($filter-blur);
     transform: translateX(calc(-#{$marg} + -100px));
   }
 

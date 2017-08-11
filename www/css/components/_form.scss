@@ -9,7 +9,7 @@ form {
 
   > div {
     padding: 0 0 0 $marg;
-    border-bottom: $borderWidth $borderStyle $color2;
+    border-bottom: $border-width $border-style $color-border;
     display: flex;
     overflow: hidden;
   }
@@ -25,33 +25,33 @@ form {
   > div:last-child {
     margin: 0 0 0 $marg;
     padding: 0;
-    border-left: $borderWidth $borderStyle $color2;
+    border-left: $border-width $border-style $color-border;
   }
 
   textarea {
     width: 100%;
-    min-height: calc((#{$lineHeight}em * 4) + (#{$gout} * 2));
+    min-height: calc((#{$line-height}em * 4) + (#{$gout} * 2));
     margin: 0;
     padding: $gout;
-    border-width: 0 0 0 $borderWidth;
-    border-style: $borderStyle;
-    border-color: $color2;
+    border-width: 0 0 0 $border-width;
+    border-style: $border-style;
+    border-color: $color-border;
     border-radius: 0;
     outline: none;
     background: transparent;
-    color: $color1;
-    font-size: $fontSize_1;
-    font-weight: $fontWeight;
-    line-height: #{$lineHeight}em;
+    color: $color-txt;
+    font-size: $fontsize-1;
+    font-weight: $font-weight;
+    line-height: #{$line-height}em;
     letter-spacing: 0;
     transition: background $transition;
 
     &::-webkit-input-placeholder {
-      color: rgba($color1, $varColor1);
+      color: rgba($color-txt, $opacity-1);
     }
 
     &:focus {
-      background: $color2;
+      background: $color-border;
     }
   }
 
@@ -61,22 +61,22 @@ form {
     background: transparent;
     border: none;
     align-self: flex-start;
-    color: rgba($color1, $varColor1);
-    font-size: $fontSize_1;
-    font-weight: $fontWeight;
-    letter-spacing: $letterSpacing;
+    color: rgba($color-txt, $opacity-1);
+    font-size: $fontsize-1;
+    font-weight: $font-weight;
+    letter-spacing: $letter-spacing;
     cursor: pointer;
     outline: none;
     transition: color $transition;
-    animation: li_event #{$animationDuration - 500}ms $cubic-bezier 500ms backwards;
+    animation: li_event #{$animation-duration - 500}ms $cubic-bezier 500ms backwards;
 
     &:hover,
     &:focus {
-      color: $color1;
+      color: $color-txt;
     }
 
     &:active {
-      color: rgba($color1, $varColor2);
+      color: rgba($color-txt, $opacity-2);
     }
   }
 }

@@ -8,9 +8,9 @@
 }
 
 html {
-  font: $fontWeight 100%/1.25  "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
+  font: $font-weight 100%/1.25  "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
 
-  /*@media (#{$maxDeviceWith}) {
+  /*@media (#{$max-device-width}) {
     font-size: 30px;
   }*/
 }

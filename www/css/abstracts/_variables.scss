@@ -1,34 +1,33 @@
 /* Variables */
 
-$color1: #444;
-//$color1: green; // Color Typo
-$color2: #ededed; // Color Border
-$color3: #fefefe; // Color Background
+$color-txt: #444;
+$color-border: #ededed;
+$color-background: #fefefe;
 
-$varColor1: .5;
-$varColor2: .25;
+$opacity-1: .5;
+$opacity-2: .25;
 
 $marg: 10vw;
 $gout: 2.5vw;
 
-$borderWidth: 1px;
-$borderStyle: solid;
+$border-width: 1px;
+$border-style: solid;
 
-$filterBlur: .75rem;
+$filter-blur: .75rem;
 
-$fontSize_1: 2rem;
-$fontSize_2: 4rem;
-$fontWeight: 600;
-$letterSpacing: .075rem;
-$lineHeight: 1.25;
+$fontsize-1: 2rem;
+$fontsize-2: 4rem;
+$font-weight: 600;
+$letter-spacing: .075rem;
+$line-height: 1.25;
 
 $cubic-bezier: cubic-bezier(.25, .1, .25, 1);
 $transition: 200ms $cubic-bezier;
-$animationDuration: 1000;
+$animation-duration: 1000;
 
-$maxDeviceWith: 'max-device-width: 700px';
+$max-device-width: 'max-device-width: 700px';
 
-$hubList: 4;
+$nav-list: 4;
 $twitter: #1da1f2;
 $linkedin: #0077b5;
 $github: #333;

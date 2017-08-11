@@ -8,25 +8,25 @@ article {
 
   > * {
     flex: 1;
-    border-left: $borderWidth $borderStyle $color2;
+    border-left: $border-width $border-style $color-border;
   }
 
   p {
     margin: 0;
     padding: $gout;
-    font-size: $fontSize_1;
+    font-size: $fontsize-1;
   }
 
   a {
-    color: rgba($color1, $varColor1);
+    color: rgba($color-txt, $opacity-1);
 
     &:hover,
     &:focus {
-      color: $color1;
+      color: $color-txt;
     }
 
     &:active {
-      color: rgba($color1, $varColor2);
+      color: rgba($color-txt, $opacity-2);
     }
   }
 }
