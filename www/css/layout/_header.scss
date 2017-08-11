@@ -46,7 +46,7 @@ header {
   0% {
     opacity: 0;
     filter: blur($filter-blur);
-    transform: translateY(calc(#{$marg} + 100px));
+    transform: translate3d(0, calc(#{$marg} + 100px), 0);
   }
   50% {
     opacity: 1;
@@ -54,6 +54,6 @@ header {
   100% {
     opacity: 1;
     filter: blur(0);
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
