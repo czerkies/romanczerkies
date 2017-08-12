@@ -21,7 +21,7 @@
 </url>
 <?php if($urls) foreach ($urls as $value): ?>
   <url>
-    <loc>http://<?= $_SERVER['SERVER_NAME'] . '/' . $value['url'] . '/'; ?></loc>
+    <loc>http://<?= $_SERVER['SERVER_NAME'] . $value['url'] . '/'; ?></loc>
   </url>
 <?php endforeach; ?>
 </urlset>
