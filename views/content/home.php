@@ -2,7 +2,7 @@
       <ul>
 <?php if ($hub) foreach ($hub as $val): ?>
         <li>
-          <a href="//<?= $val['href']; ?>" title="<?= $val['title']; ?>" target="_blank"><?= $val['value']; ?></a>
+          <a href="//<?= $val['href']; ?>" title="<?= $val['title']; ?>"><?= $val['value']; ?></a>
         </li>
 <?php endforeach; ?>
         <li>

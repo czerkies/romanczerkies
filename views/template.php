@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="<?= $meta['description']; ?>">
     <title><?= $meta['title']; ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type="text/css">
       <?php include RACINE_SERVER . RACINE . 'css/style.css'; ?>
     </style>
