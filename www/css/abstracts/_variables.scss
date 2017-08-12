@@ -4,11 +4,11 @@ $color-txt: #444;
 $color-border: #ededed;
 $color-background: #fefefe;
 
-$opacity-1: .5;
+$opacity-1: .6;
 $opacity-2: .25;
 
 $marg: 10vw;
-$gout: 2.5vw;
+$gout: 3.1vw;
 
 $border-width: 1px;
 $border-style: solid;
@@ -16,9 +16,9 @@ $border-style: solid;
 $filter-blur: .75rem;
 
 $fontsize-1: 2rem;
-$fontsize-2: 4rem;
+$fontsize-2: 3.25rem;
 $font-weight: 600;
-$letter-spacing: .075rem;
+$letter-spacing: .077rem;
 $line-height: 1.25;
 
 $cubic-bezier: cubic-bezier(.25, .1, .25, 1);
@@ -26,6 +26,7 @@ $transition: 200ms $cubic-bezier;
 $animation-duration: 1000;
 
 $max-device-width: 'max-device-width: 700px';
+$max-device-width: 'max-width: 700px';
 
 $nav-list: 4;
 $twitter: #1da1f2;

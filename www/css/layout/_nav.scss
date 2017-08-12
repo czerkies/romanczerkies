@@ -109,7 +109,8 @@ nav {
   0% {
     opacity: 0;
     filter: blur($filter-blur);
-    transform: translate3d(calc(-#{$marg} + -100px), 0, 0);
+    /*transform: translate3d(calc(-#{$marg} + -100px), 0, 0);*/
+    transform: translate3d(calc(-#{$gout} * 2), 0, 0);
   }
 
   50% {
