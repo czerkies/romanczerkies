@@ -98,6 +98,7 @@ nav {
 
         &:nth-child(#{$i + 1}) {
           animation: li_event #{$animation-duration - (100 * $i)}ms $cubic-bezier #{100 * $i}ms backwards;
+          @include reduce-motion;
         }
       }
     }
@@ -109,7 +110,6 @@ nav {
   0% {
     opacity: 0;
     filter: blur($filter-blur);
-    /*transform: translate3d(calc(-#{$marg} + -100px), 0, 0);*/
     transform: translate3d(calc(-#{$gout} * 2), 0, 0);
   }
 

@@ -26,10 +26,12 @@ header {
 
     h1 {
       animation: header_event #{$animation-duration}ms $cubic-bezier 0ms backwards;
+      @include reduce-motion;
     }
 
     h2 {
       animation: header_event #{$animation-duration - 150}ms $cubic-bezier 150ms backwards;
+      @include reduce-motion;
     }
 
     &:focus {
