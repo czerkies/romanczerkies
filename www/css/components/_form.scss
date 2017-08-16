@@ -46,8 +46,10 @@ form {
     letter-spacing: 0;
     transition: background $transition;
 
-    &::-webkit-input-placeholder {
-      color: rgba($color-txt, $opacity-1);
+    &::placeholder,
+    &::-moz-placeholder {
+      //color: rgba($color-txt, $opacity-1);
+      color: red;
     }
 
     &:focus {
