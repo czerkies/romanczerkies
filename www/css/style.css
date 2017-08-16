@@ -12,7 +12,7 @@
 
 html {
   font: 600 100%/1.25 "Helvetica Neue", "Calibri Light", Roboto, sans-serif; }
-  @media (max-width: 700px) {
+  @media (max-device-width: 700px) {
     html {
       font-size: 60%; } }
 
@@ -53,9 +53,9 @@ form {
     border-left: 1px solid #ededed; }
   form textarea {
     width: 100%;
-    min-height: calc((1.25em * 4) + (3.1vw * 2));
+    min-height: calc((1.25em * 4) + (3.1vh * 2));
     margin: 0;
-    padding: 3.1vw;
+    padding: 3.1vh;
     border-width: 0 0 0 1px;
     border-style: solid;
     border-color: #ededed;
@@ -68,13 +68,13 @@ form {
     line-height: 1.25em;
     letter-spacing: 0;
     transition: background 200ms cubic-bezier(0.25, 0.1, 0.25, 1); }
-    form textarea::-webkit-input-placeholder {
-      color: rgba(17, 17, 17, 0.6); }
+    form textarea::placeholder, form textarea::-moz-placeholder {
+      color: red; }
     form textarea:focus {
       background: #ededed; }
   form input[type=submit] {
     margin: 0;
-    padding: 3.1vw;
+    padding: 3.1vh;
     background: transparent;
     border: none;
     align-self: flex-start;
@@ -101,7 +101,7 @@ header {
   header > * {
     border-left: 1px solid #ededed; }
   header a {
-    padding: 3.1vw;
+    padding: 3.1vh;
     color: #111; }
     header a h1,
     header a h2 {
@@ -129,7 +129,7 @@ header {
   0% {
     opacity: 0;
     filter: blur(0.5rem);
-    transform: translate3d(0, calc(3.1vw * 3), 0); }
+    transform: translate3d(0, calc(3.1vh * 3), 0); }
   75% {
     opacity: 1;
     filter: blur(0); }
@@ -145,7 +145,7 @@ nav {
   nav ul {
     list-style: none;
     margin: 0;
-    padding: calc(3.1vw / 2) 0;
+    padding: calc(3.1vh / 2) 0;
     display: flex;
     flex-flow: column;
     overflow: hidden; }
@@ -154,7 +154,7 @@ nav {
       nav ul li a,
       nav ul li label {
         display: block;
-        padding: calc(3.1vw / 2) 3.1vw;
+        padding: calc(3.1vh / 2) 3.1vh;
         font-size: 2rem;
         letter-spacing: 0.077rem; }
       nav ul li a {
@@ -213,7 +213,7 @@ nav {
   0% {
     opacity: 0;
     filter: blur(0.5rem);
-    transform: translate3d(calc(-3.1vw * 4), 0, 0); }
+    transform: translate3d(calc(-3.1vh * 4), 0, 0); }
   75% {
     opacity: 1;
     filter: blur(0); }
@@ -232,7 +232,7 @@ article {
     border-left: 1px solid #ededed; }
   article p {
     margin: 0;
-    padding: 3.1vw;
+    padding: 3.1vh;
     font-size: 2rem;
     color: #111; }
   article a {
