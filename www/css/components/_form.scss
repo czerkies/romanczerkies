@@ -47,7 +47,7 @@ form {
     transition: background $transition;
 
     &::placeholder,
-    &::-moz-placeholder {
+    &:-moz-placeholder {
       //color: rgba($color-txt, $opacity-1);
       color: red;
     }
