@@ -7,6 +7,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+:focus:not(textarea) {
+	outline: 3px solid #c1e0fe;
+	outline: 3px solid rgba(131, 192, 253, 0.5);
+	outline-offset: -3px
+}
+
 html {
   font: $font-weight 100%/#{$line-height}  "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
 

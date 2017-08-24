@@ -68,7 +68,7 @@ form {
     font-weight: $font-weight;
     letter-spacing: $letter-spacing;
     cursor: pointer;
-    outline: none;
+    /*outline: none;*/
     transition: color $transition;
     animation: li_event #{$animation-duration - 500}ms $cubic-bezier 500ms backwards;
 
