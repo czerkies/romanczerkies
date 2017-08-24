@@ -23,8 +23,6 @@ html {
 
 /* Body */
 body {
-  display: flex;
-  flex-flow: column;
   min-height: 100vh;
   margin: 0;
   background: #fefefe; }
@@ -134,7 +132,7 @@ header {
   0% {
     opacity: 0;
     filter: blur(0.5rem);
-    transform: translate3d(0, calc(3.1vh * 3), 0); }
+    transform: translate3d(0, calc(3.1vh * 4), 0); }
   75% {
     opacity: 1;
     filter: blur(0); }
