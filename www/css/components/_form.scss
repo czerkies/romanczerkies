@@ -37,20 +37,15 @@ form {
     border-style: $border-style;
     border-color: $color-border;
     border-radius: 0;
-    outline: none;
+    /*outline: none;*/
     background: transparent;
     color: $color-txt;
-    font-size: $fontsize-1;
+    font: $font-weight #{$fontsize-1}/#{$line-height} $font-family;
+    /*font-size: $fontsize-1;
     font-weight: $font-weight;
-    line-height: #{$line-height}em;
+    line-height: #{$line-height}em;*/
     letter-spacing: 0;
     transition: background $transition;
-
-    &::placeholder,
-    &::-moz-placeholder {
-      //color: rgba($color-txt, $opacity-1);
-      color: red;
-    }
 
     &:focus {
       background: $color-border;
@@ -68,7 +63,7 @@ form {
     font-weight: $font-weight;
     letter-spacing: $letter-spacing;
     cursor: pointer;
-    outline: none;
+    /*outline: none;*/
     transition: color $transition;
     animation: li_event #{$animation-duration - 500}ms $cubic-bezier 500ms backwards;
 

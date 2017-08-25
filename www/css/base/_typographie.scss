@@ -1,0 +1,9 @@
+/* Typographie */
+
+html {
+  font: $font-weight 100%/#{$line-height} $font-family;
+
+  @media (#{$max-device-width}) {
+    font-size: 60%;
+  }
+}
