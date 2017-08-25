@@ -1,7 +1,23 @@
-/* reduced-motion */
+/* Mixins */
 
-@mixin reduce-motion() {
+/* reduced-motion */
+@mixin reduce-motion($type: both) {
   @media (prefers-reduced-motion) {
-    animation: none;
+    @if $type == 'both' {
+      transition: none;
+      animation: none;
+    } @else if $type == 'transition' {
+      transition: none;
+    } @else if $type == 'animation' {
+      animation: none;
+    }
+  }
+}
+
+/* reduced-transparency */
+@mixin reduced-transparency($color) {
+  @media (prefers-reduced-transparency) {
+    background: $color;
+    -webkit-backdrop-filter: none;
   }
 }

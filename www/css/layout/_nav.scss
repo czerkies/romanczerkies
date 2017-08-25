@@ -84,6 +84,7 @@ nav {
         color: rgba($color-txt, $opacity-1);
         cursor: pointer;
         transition: color $transition;
+        @include reduce-motion(transition);
 
         &:hover {
           color: $color-txt;
@@ -98,7 +99,7 @@ nav {
 
         &:nth-child(#{$i + 1}) {
           animation: li_event #{$animation-duration - (100 * $i)}ms $cubic-bezier #{100 * $i}ms backwards;
-          @include reduce-motion;
+          @include reduce-motion(animation);
         }
       }
     }

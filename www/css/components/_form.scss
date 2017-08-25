@@ -19,7 +19,6 @@ form {
     border-bottom: none;
     display: flex;
     flex-flow: column;
-    flex: 1;
   }
 
   > div:last-child {
@@ -37,15 +36,13 @@ form {
     border-style: $border-style;
     border-color: $color-border;
     border-radius: 0;
-    /*outline: none;*/
+    outline: none;
     background: transparent;
     color: $color-txt;
     font: $font-weight #{$fontsize-1}/#{$line-height} $font-family;
-    /*font-size: $fontsize-1;
-    font-weight: $font-weight;
-    line-height: #{$line-height}em;*/
     letter-spacing: 0;
     transition: background $transition;
+    @include reduce-motion(transition);
 
     &:focus {
       background: $color-border;
@@ -63,9 +60,9 @@ form {
     font-weight: $font-weight;
     letter-spacing: $letter-spacing;
     cursor: pointer;
-    /*outline: none;*/
     transition: color $transition;
     animation: li_event #{$animation-duration - 500}ms $cubic-bezier 500ms backwards;
+    @include reduce-motion();
 
     &:hover,
     &:focus {

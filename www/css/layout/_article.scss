@@ -1,15 +1,8 @@
 /* Article */
 
 article {
-  flex: 1;
-  display: flex;
-  flex-flow: column;
-  padding: 0 0 0 $marg;
-
-  > * {
-    flex: 1;
-    border-left: $border-width $border-style $color-border;
-  }
+  margin: 0 0 0 $marg;
+  border-left: $border-width $border-style $color-border;
 
   p {
     margin: 0;

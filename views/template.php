@@ -17,7 +17,9 @@
       </a>
     </header>
 <?= $buffer; ?>
-    <!-- romanczerkies.fr Version 10.1.0 - © <?= date('Y'); ?> Roman Czerkies. Tous droits réservés. - SIRET 79321556700017 -->
+    <footer>
+      <!-- romanczerkies.fr Version 10.1.0 - © <?= date('Y'); ?> Roman Czerkies. Tous droits réservés. - SIRET 79321556700017 -->
+    </footer>
 <?php if (HOTJAR): ?>
     <script type="text/javascript">
       (function(h,o,t,j,a,r){
