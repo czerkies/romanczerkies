@@ -6,14 +6,16 @@
 
 ### Développement de romanczerkies.fr Version 10.
 
-romanczerkies.fr Version 10 est en cours de développement.
+romanczerkies.fr Version 10.1.0 est en cours de développement.
 
+Brutalism Web Design.
 Réseaux Sociaux listés.
 Formulaire de contact simplifié.
 
 ### Date de mise en production
 
-09/01/2017
+V10.1.0 - 12/09/2017
+V10.0.0 - 09/01/2017
 
 
 ## Technos
@@ -29,6 +31,6 @@ Formulaire de contact simplifié.
 
 ## Liens
 
-Site : [romanczerkies.fr Version 9.1](http://romanczerkies.fr/)
+Site : [romanczerkies.fr Version 10.0.0](http://romanczerkies.fr/)
 
 Twitter : [@roman_czerkies](http://twitter.com/roman_czerkies)
