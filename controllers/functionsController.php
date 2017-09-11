@@ -135,7 +135,7 @@ class functionsController extends superController {
     $response = '';
 
     // Vérification des champs
-    if (!isset($_POST['msg']) || !isset($_POST['rbt'])) $response = "Mais, enfin, cesse de t'amuser avec ton inspecteur !";
+    if (!isset($_POST['msg']) || !isset($_POST['rbt'])) $response = "Mais, enfin, cesse de t'amuser avec ton inspecteur.";
 
     elseif (isset($_COOKIE['message']) && $_POST['msg'] === $_COOKIE['message']) $response = "Vous ne seriez pas en train de me renvoyer exactement le même message ?!";
 
@@ -174,7 +174,7 @@ class functionsController extends superController {
 
     } elseif (strlen($_POST['msg']) < 5) {
 
-      $response = "Il est vraiment court ce messag, pour la peine je ne l'envoie pas.";
+      $response = "Il est vraiment court ce message, pour la peine je ne l'envoie pas.";
       if (isset($_COOKIE['empty'])) unset($_COOKIE['empty']); setCookie('empty', '', -1);
 
     } elseif (empty($response)) {
