@@ -4,11 +4,15 @@
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale
+  -moz-osx-font-smoothing: grayscale;
 }
 
-:focus:not(textarea) {
+:focus:not(:active):not(textarea) {
 	outline: 3px solid #c1e0fe;
 	outline: 3px solid rgba(131, 192, 253, 0.5);
-	outline-offset: -3px
+	outline-offset: -3px;
+}
+
+input:active {
+  outline: none;
 }

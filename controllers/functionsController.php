@@ -135,46 +135,46 @@ class functionsController extends superController {
     $response = '';
 
     // Vérification des champs
-    if (!isset($_POST['msg']) || !isset($_POST['rbt'])) $response = "Mais, enfin, cesse de t'amuser avec ton inspecteur. :O";
+    if (!isset($_POST['msg']) || !isset($_POST['rbt'])) $response = "Mais, enfin, cesse de t'amuser avec ton inspecteur.";
 
-    elseif (isset($_COOKIE['message']) && $_POST['msg'] === $_COOKIE['message']) $response = "Vous ne seriez pas en train de me renvoyer exactement le même message ?! O_o";
+    elseif (isset($_COOKIE['message']) && $_POST['msg'] === $_COOKIE['message']) $response = "Vous ne seriez pas en train de me renvoyer exactement le même message ?!";
 
-    elseif (isset($_COOKIE['request'])) $response = "Attendez un petit peu, je crois que je n'ai toujours pas lu votre premier message. :)";
+    elseif (isset($_COOKIE['request'])) $response = "Attendez un petit peu, je crois que je n'ai toujours pas lu votre premier message.";
 
-    elseif (!empty($_POST['rbt'])) $response = "Tu es un robot ? Dommage, j'en suis un aussi. :p";
+    elseif (!empty($_POST['rbt'])) $response = "Tu es un robot ? Dommage, j'en suis un aussi.";
 
     elseif (empty($_POST['msg'])) {
 
       if (!isset($_COOKIE['empty'])) {
 
-        $response = "Ce message me semble un peu vide pour l'envoyer. ^^'";
+        $response = "Ce message me semble un peu vide pour l'envoyer.";
         setCookie('empty', 1, time()+60);
 
       } elseif ($_COOKIE['empty'] == 1) {
 
-        $response = "En fait, vous aimez la petite animation. :)";
+        $response = "En fait, vous aimez la petite animation.";
         setCookie('empty', 2, time()+60);
 
       } elseif ($_COOKIE['empty'] == 2) {
 
-        $response = "Bon, là, ça devient inquiétant. :|";
+        $response = "Bon, là, ça devient inquiétant.";
         setCookie('empty', 3, time()+60);
 
       } elseif ($_COOKIE['empty'] == 3) {
 
-        $response = "Hmmm... :/";
+        $response = "Hmmm...";
         setCookie('empty', 4, time()+60);
 
       } elseif ($_COOKIE['empty'] == 4) {
 
-        $response = "J'attends votre message moi ! :(";
+        $response = "J'attends votre message moi !";
         setCookie('empty', 4, time()+600);
 
       }
 
     } elseif (strlen($_POST['msg']) < 5) {
 
-      $response = "Il est vraiment court ce message, pour la peine je ne l'envoie pas. :O";
+      $response = "Il est vraiment court ce message, pour la peine je ne l'envoie pas.";
       if (isset($_COOKIE['empty'])) unset($_COOKIE['empty']); setCookie('empty', '', -1);
 
     } elseif (empty($response)) {
@@ -188,12 +188,12 @@ class functionsController extends superController {
 
       if (self::sendMail($emails, 'Contact', $message)) {
 
-        $response = "Nickel, ton message a bien été envoyé ! :D";
+        $response = "Nickel, ton message a bien été envoyé !";
         setCookie('message', $message, time()+3600); // Expire 1 heure
         setCookie('request', TRUE, time()+60); // Expire 1 minute
         if (isset($_COOKIE['empty'])) unset($_COOKIE['empty']); setCookie('empty', '', -1);
 
-      } else $response = "Mince, il ya eu comme un problème lorsque j'ai voulu envoyer ton message. :O";
+      } else $response = "Mince, il ya eu comme un problème lorsque j'ai voulu envoyer ton message.";
 
     }
 
