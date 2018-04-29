@@ -29,6 +29,6 @@ define('LOG', TRUE);
 
 // Constantes
 define('EMAIL', 'roman.czerkies@gmail.com');
-define('H1', 'Roman Czerkies');
-define('H2', 'Développeur Web Full-Stack');
+define('NAME', 'Roman Czerkies');
+define('LIFE', 'Développeur Web Full-Stack');
 define('HOTJAR', TRUE);

@@ -27,7 +27,7 @@ class functionsController extends superController {
   * @return $field string
   *
   */
-  public function fieldsFormInput($name = '', $type = 'text', $id = FALSE, $required = FALSE, $value = '', $attr = array()) {
+  public function fieldsFormInput(string $name = '', string $type = 'text', $id = FALSE, $required = FALSE, string $value = '', array $attr = []): string {
 
     $listType = ['text', 'number', 'email', 'tel', 'submit'];
 
@@ -44,7 +44,7 @@ class functionsController extends superController {
       if ($required) $field .= ' required';
       $field .= ">\n";
 
-      echo $field;
+      return $field;
 
     } else {
 
@@ -70,7 +70,7 @@ class functionsController extends superController {
   * @return $field string
   *
   */
-  public function fieldsFormTextarea($name = '', $id = FALSE, $required = FALSE, $value = NULL, $attr = array()) {
+  public function fieldsFormTextarea(string $name = '', $id = FALSE, $required = FALSE, $value = NULL, array $attr = []): string {
 
     $field = '';
 
@@ -83,7 +83,7 @@ class functionsController extends superController {
     elseif ($value) $field .= $value;
     $field .= "</textarea>\n";
 
-    echo $field;
+    return $field;
 
   }
 
