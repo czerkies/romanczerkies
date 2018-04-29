@@ -3,22 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="description" content="<?= $meta['description']; ?>">
-    <title><?= $meta['title']; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?= $meta['title']; ?></title>
+    <link rel="stylesheet" href="<?= RACINE; ?>css/style.css">
     <style type="text/css">
-      <?php include RACINE_SERVER . RACINE . 'css/style.css'; ?>
+      <?php //include RACINE_SERVER . RACINE . 'css/style.css'; ?>
     </style>
   </head>
   <body>
-    <header>
-      <a href="<?= RACINE; ?>" title="Accueil">
-        <h1><?= H1; ?></h1>
-        <h2><?= H2; ?></h2>
+    <header class="title">
+      <a href="<?= RACINE; ?>" class="title-link" title="Accueil">
+        <h1 class="title-link_name"><?= NAME; ?></h1>
+        <h2 class="title-link_life"><?= LIFE; ?></h2>
       </a>
     </header>
 <?= $buffer; ?>
-    <footer>
-      <!-- romanczerkies.fr Version 10.1.1 - © <?= date('Y'); ?> Roman Czerkies. Tous droits réservés. - SIRET 79321556700017 -->
+    <footer class="footer">
+      <!-- romanczerkies.fr Version 10.2.0-beta.1 - © <?= date('Y'); ?> Roman Czerkies. Tous droits réservés. - SIRET 79321556700017 -->
     </footer>
 <?php if (HOTJAR): ?>
     <script type="text/javascript">

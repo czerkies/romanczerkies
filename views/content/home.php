@@ -1,21 +1,21 @@
-    <nav>
-      <ul>
+    <nav class="navigation">
+      <ul class="navigation-list">
 <?php if ($hub) foreach ($hub as $val): ?>
-        <li>
-          <a href="//<?= $val['href']; ?>" title="<?= $val['title']; ?>"><?= $val['value']; ?></a>
+        <li class="navigation-list--item">
+          <a href="//<?= $val['href']; ?>" class="navigation-list--item---link" title="<?= $val['title']; ?>"><?= $val['value']; ?></a>
         </li>
 <?php endforeach; ?>
-        <li>
-          <label for="msg" title="Contacter">Contact</label>
+        <li class="navigation-list--item">
+          <label for="msg" class="navigation-list--item---label" title="Contacter">Contact</label>
         </li>
       </ul>
     </nav>
-    <form method="post">
-      <?php $functions->fieldsFormInput('rbt'); ?>
-      <div>
-        <?php $functions->fieldsFormTextarea('msg', TRUE, $required, FALSE, array('title' => 'Votre message', 'placeholder' => $post)); ?>
+    <form method="post" class="form">
+      <?= $functions->fieldsFormInput('rbt'); ?>
+      <div class="form-message">
+        <?= $functions->fieldsFormTextarea('msg', TRUE, $required, FALSE, ['class' => 'form-message--input', 'title' => 'Votre message', 'placeholder' => $post]); ?>
       </div>
-      <div>
-        <?php $functions->fieldsFormInput('', 'submit', FALSE, FALSE, 'Envoyer', array('title' => 'Envoyer votre message')); ?>
+      <div class="form-send">
+        <?= $functions->fieldsFormInput('', 'submit', FALSE, FALSE, 'Envoyer', ['class' => 'form-send--input', 'title' => 'Envoyer votre message']); ?>
       </div>
     </form>
