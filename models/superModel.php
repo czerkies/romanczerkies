@@ -23,7 +23,7 @@ class superModel extends superController {
 
     $options = [ // Options
       PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,
-      PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8, lc_time_names = \'fr_FR\''
+      //PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8, lc_time_names = \'fr_FR\''
     ];
 
     $donneesDB = [
